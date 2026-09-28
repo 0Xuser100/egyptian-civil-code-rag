@@ -1,0 +1,16 @@
+stages:
+  extract_corpus:
+    cmd: >-
+      uv run --locked civil-code-extract data/raw/egyption-low.pdf
+      --json data/processed/egyptian_civil_code.json
+      --markdown data/processed/egyptian_civil_code.md
+    deps:
+      - data/raw/egyption-low.pdf
+      - src/egyptian_civil_code_rag/extraction.py
+      - pyproject.toml
+      - uv.lock
+    outs:
+      - data/processed/egyptian_civil_code.json:
+          cache: false
+      - data/processed/egyptian_civil_code.md:
+          cache: false

@@ -5,6 +5,9 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+build/
+dist/
+*.egg-info/
 
 # Source PDFs and the original workspace experiment artifacts
 /egyptian-civil-code-extraction-report.pdf
