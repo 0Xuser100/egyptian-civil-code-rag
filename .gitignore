@@ -9,14 +9,6 @@ build/
 dist/
 *.egg-info/
 
-# Source PDFs and the original workspace experiment artifacts
-/egyptian-civil-code-extraction-report.pdf
-/egyption-low.pdf
-/The-MLOps-Practitioner-Handbook-3-tracks.pdf
-/egyptian_civil_code.json
-/egyptian_civil_code.md
-/extract_egyptian_civil_code.py
-
 # Local secrets and generated files
 .env
 .env.*

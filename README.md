@@ -10,6 +10,7 @@ Repository name: `egyptian-civil-code-rag`.
 
 ```text
 .
+|-- assets/                  # Extraction report and course handbook PDFs
 |-- data/
 |   |-- raw/                 # Local source PDF; excluded from Git
 |   `-- processed/           # Article JSON and readable Markdown review
@@ -20,6 +21,8 @@ Repository name: `egyptian-civil-code-rag`.
 |   `-- extraction-review.md
 |-- src/egyptian_civil_code_rag/
 |   `-- extraction.py
+|-- scripts/
+|   `-- extract_egyptian_civil_code.py  # Thin entry point to the package
 |-- tests/
 |-- pyproject.toml
 |-- uv.lock
@@ -30,13 +33,13 @@ The package is initialized and locked with `uv`. `pyproject.toml` defines Python
 
 ```powershell
 uv sync --locked
-Copy-Item 'PATH_TO_SOURCE\egyption-low.pdf' 'data\raw\egyption-low.pdf'
+git restore --source origin/main --worktree -- data/raw/egyption-low.pdf
 uv run civil-code-extract
 ```
 
-The equivalent copy step on macOS/Linux is `cp PATH_TO_SOURCE/egyption-low.pdf data/raw/egyption-low.pdf`.
+The source restore command works on Windows, macOS, and Linux. Alternatively, supply your own copy at `data/raw/egyption-low.pdf`.
 
-The command writes `data/processed/egyptian_civil_code.json` and `data/processed/egyptian_civil_code.md`. The original workspace copies of the PDFs and current experiment outputs remain at the top level for review, but are ignored by Git.
+The command writes `data/processed/egyptian_civil_code.json` and `data/processed/egyptian_civil_code.md`. Reference PDFs live in `assets/`; there are no top-level duplicate artifacts. `uv run --locked python scripts/extract_egyptian_civil_code.py` invokes the same packaged implementation as `civil-code-extract`.
 
 ## Corpus format
 
@@ -52,7 +55,7 @@ uv run pytest
 uv build
 ```
 
-`dvc` is an optional uv extra. The source PDF has a DVC pointer at `data/raw/egyption-low.pdf.dvc`, but no shared DVC remote is configured. The PDF itself and DVC cache are not committed to Git, so a fresh clone must supply the PDF until a shared remote is chosen. The extracted JSON and Markdown remain committed review artifacts. After configuring a shared remote, use `uv sync --extra dvc --locked`, `uv run --extra dvc dvc pull`, `uv run --extra dvc dvc repro`, and `uv run --extra dvc dvc push`.
+`dvc` is an optional uv extra. This branch versions the source with `data/raw/egyption-low.pdf.dvc` and excludes the PDF and cache from Git. No shared DVC remote is configured. The simple `main` baseline includes the PDF, so the restore command above provides it until shared storage is chosen. The extracted JSON and Markdown remain committed review artifacts. After configuring a shared remote, use `uv sync --extra dvc --locked`, `uv run --extra dvc dvc pull`, `uv run --extra dvc dvc repro`, and `uv run --extra dvc dvc push`.
 
 ## Design and milestones
 
