@@ -5,6 +5,7 @@ from egyptian_civil_code_rag.extraction import (
     EN_RANGE_RE,
     EN_SINGLE_REPEALED_RE,
     detect_article,
+    line_text,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -120,6 +121,23 @@ def test_known_language_gap_and_repeal_ranges_are_visible() -> None:
 def test_clipped_english_article_label_is_normalized() -> None:
     records = {record["article_number"]: record for record in load_corpus()}
     assert records[452]["text_en"].startswith("Article 452")
+
+
+def test_lam_alef_ligature_order_is_restored() -> None:
+    # Glyph geometry observed on source page 16: the ligature's alef is zero-width
+    # at lam's right edge, while a real definite-article alef has its own width.
+    fa = {"c": "ف", "bbox": (435.74, 0, 440.0, 10)}
+    ligature_alef = {"c": "ا", "bbox": (435.74, 0, 435.74, 10)}
+    ligature_lam = {"c": "ل", "bbox": (429.10, 0, 435.74, 10)}
+    assert line_text([fa, ligature_alef, ligature_lam]) == "فلا"
+
+    article_alef = {"c": "ا", "bbox": (435.0, 0, 438.0, 10)}
+    article_lam = {"c": "ل", "bbox": (431.0, 0, 435.0, 10)}
+    assert line_text([article_alef, article_lam]) == "ال"
+
+    records = {record["article_number"]: record for record in load_corpus()}
+    assert "فلا يجوز نقضه ولا تعديله إلا" in records[147]["text_ar"]
+    assert records[1]["hierarchy_ar"]["section"] == "الفصل الأول"
 
 
 def test_numbered_topic_heading_is_captured() -> None:

@@ -25,6 +25,8 @@ ARABIC_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234
 ARABIC_DIGIT_RUN_RE = re.compile(r"[\u0660-\u0669\u06f0-\u06f9]+")
 DIACRITICS_RE = re.compile(r"[\u064b-\u0652\u0670]")
 TATWEEL = "\u0640"
+LAM = "\u0644"
+LAM_ALEF_TAILS = "\u0627\u0623\u0625\u0622"  # \u0627 \u0623 \u0625 \u0622
 
 EN_ARTICLE_RE = re.compile(r"^\s*(?:A?rticle|Art\.)\s*(\d{1,4})\b", re.IGNORECASE)
 # PDF text extraction splits some Arabic labels with one space inside the word
@@ -125,10 +127,43 @@ def classify_cell(text: str) -> str | None:
     return None
 
 
+def line_text(chars: list[dict[str, Any]]) -> str:
+    """Join a text line's characters, restoring the logical order of lam-alef ligatures.
+
+    The source font maps each lam-alef ligature glyph to lam plus a zero-width alef
+    placed at lam's right edge, and PyMuPDF emits that alef first, so "لا" reads as
+    "ال". The zero width and shared edge separate a ligature from a real "ال".
+    """
+    text: list[str] = []
+    index = 0
+    while index < len(chars):
+        char = chars[index]
+        following = chars[index + 1] if index + 1 < len(chars) else None
+        if (
+            following is not None
+            and char["c"] in LAM_ALEF_TAILS
+            and following["c"] == LAM
+            and char["bbox"][0] == char["bbox"][2]
+            and abs(following["bbox"][2] - char["bbox"][0]) < 0.01
+        ):
+            text += [LAM, char["c"]]
+            index += 2
+        else:
+            text.append(char["c"])
+            index += 1
+    return "".join(text)
+
+
 def cell_text(page: pymupdf.Page, cell: tuple[float, float, float, float] | None) -> str:
     if not cell:
         return ""
-    return clean_source_text(page.get_text("text", clip=pymupdf.Rect(cell)))
+    blocks = page.get_text("rawdict", clip=pymupdf.Rect(cell))["blocks"]
+    lines = (
+        line_text([char for span in line["spans"] for char in span["chars"]])
+        for block in blocks
+        for line in block.get("lines", [])
+    )
+    return clean_source_text("\n".join(lines))
 
 
 def extract_row_texts(page: pymupdf.Page, cells: list[Any]) -> dict[str, str]:

@@ -15,8 +15,8 @@ stages:
       size: 688
     - path: src/egyptian_civil_code_rag/extraction.py
       hash: md5
-      md5: 0af60e8a907364ce07daf064bff4df2e
-      size: 22260
+      md5: e463efd575c12ced9aea46ae0ab44219
+      size: 23551
     - path: uv.lock
       hash: md5
       md5: 8bbd8848e7a846f0158502af449d3565
@@ -24,9 +24,9 @@ stages:
     outs:
     - path: data/processed/egyptian_civil_code.json
       hash: md5
-      md5: ffd3c31f4f9936c79bbb855b05b944f2
-      size: 2352655
+      md5: aa99eba572a38dd6b535b63b925890ac
+      size: 2352329
     - path: data/processed/egyptian_civil_code.md
       hash: md5
-      md5: a3214e1ef5d1a358265968b71dfff290
-      size: 1085441
+      md5: bc71224a427dc2bdadba80c0fe2efe1f
+      size: 1085299
