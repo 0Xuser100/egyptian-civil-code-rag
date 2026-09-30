@@ -37,6 +37,7 @@ Source SHA-256: `2d6419fb262dab712f7bf5f6e31834bea74fbcf03b78ae081dd35d156915eeb
 - [ ] The page 1 issuing-law block is intentionally excluded from this Code-only scope.
 - [x] Visually confirm article labels and row boundaries for recovered articles 439, 543, 601, 615, 627, 652, 660, 703, 855, 966, 1005, 1088, 1092, 1118; see `extraction-accuracy-review.md` (2026-10-01).
 - [ ] Review the remaining Arabic gap at Article 1022 against pages 147-148; do not move adjacent Article 1021 text without legal review.
+- [ ] Spot-check restored lam-alef text against the PDF, starting with Article 147 on page 16 and an Arabic heading such as "الفصل الأول".
 - [ ] Distinguish Part headings from Book headings.
 - [ ] Record handling decisions for all flags and approve a corpus version before indexing.
 

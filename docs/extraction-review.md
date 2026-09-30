@@ -2,7 +2,7 @@
 
 ## Source and method
 
-The supplied `egyption-low.pdf` is a 170-page, bilingual Arabic/English Civil Code PDF with a native text layer and ruled two-column tables. The extraction report recommends PyMuPDF 1.24 or newer, `page.find_tables(strategy="lines")`, and per-cell text extraction using the cell bounding box. It warns that whole-page extraction can interleave columns and that Arabic-Indic digit runs can be returned in visual order. The current extractor uses this table-cell method, maintains independent language cursors, normalizes Unicode, restores reversed digit runs, records page provenance, and does not use OCR or pdfplumber.
+The supplied `egyption-low.pdf` is a 170-page, bilingual Arabic/English Civil Code PDF with a native text layer and ruled two-column tables. The extraction report recommends PyMuPDF 1.24 or newer, `page.find_tables(strategy="lines")`, and per-cell text extraction using the cell bounding box. It warns that whole-page extraction can interleave columns and that Arabic-Indic digit runs can be returned in visual order. The current extractor uses this table-cell method, maintains independent language cursors, normalizes Unicode, restores reversed digit runs and lam-alef ligature order, records page provenance, and does not use OCR or pdfplumber.
 
 ## Current run measurements
 

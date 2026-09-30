@@ -85,7 +85,7 @@ Run the API container behind a TLS-terminating reverse proxy or managed ingress.
 
 ### Course extensions
 
-Add Langfuse, MLflow, RAGAS, and DVC workflows as the corresponding course milestones are implemented. The final serving stage can wrap the RAG service with BentoML and serve an offline quantized model through vLLM. Keep those as explicit later stages so local extraction and the first API do not depend on GPU infrastructure.
+Add Langfuse, MLflow, and RAGAS workflows, and extend the existing DVC pipeline with an indexing stage, as the corresponding course milestones are implemented. The final serving stage can wrap the RAG service with BentoML and serve an offline quantized model through vLLM. Keep those as explicit later stages so local extraction and the first API do not depend on GPU infrastructure.
 
 ## Project 2 delivery map
 
