@@ -26,7 +26,7 @@ ARABIC_DIGIT_RUN_RE = re.compile(r"[\u0660-\u0669\u06f0-\u06f9]+")
 DIACRITICS_RE = re.compile(r"[\u064b-\u0652\u0670]")
 TATWEEL = "\u0640"
 LAM = "\u0644"
-LAM_ALEF_TAILS = "\u0627\u0623\u0625\u0622"  # \u0627 \u0623 \u0625 \u0622
+LAM_ALEF_TAILS = "\u0627\u0623\u0625\u0622"  # ا أ إ آ
 
 EN_ARTICLE_RE = re.compile(r"^\s*(?:A?rticle|Art\.)\s*(\d{1,4})\b", re.IGNORECASE)
 # PDF text extraction splits some Arabic labels with one space inside the word
