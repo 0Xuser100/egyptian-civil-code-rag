@@ -1649,13 +1649,13 @@
     "id": "code-0060",
     "scope": "code",
     "article_number": 60,
-    "book": "الكتاب الثاني",
-    "chapter": "الباب الثاني",
-    "section": "الفصل األول",
+    "book": null,
+    "chapter": null,
+    "section": null,
     "topic": null,
-    "text_ar": "مادة\n٦٠ ١\n(١ .) ال ينتهي اإليجار بموت المؤجر وال بموت المستأجر\n(٢ ) ومع ذلك إذا مات المستأجر جاز لورثته أن يطلبوا انتهاء العقد إذا\nأثبتوا أنه بسبب موت مورثهم أصبحت أعباء العقد أثقل من أن تتحملها\nمواردهم ، أو أصبح اإليجار مجاوزًا حدود حاجتهم . وفى هذه الحالة يجب\nأن ترا\nعى مواعيد\nالتنبيه باإلخالء المبينة فى المادة\n٥٦٣ ، وأن يكون طلب إ\nاء نه\nالعقد فى مدة\nستة\nأشهر\n. على األكثر من وقت موت المستأجر",
+    "text_ar": "",
     "text_en": "",
-    "arabic_norm": "مادة\n60 1\n(1 .) ال ينتهي االيجار بموت المؤجر وال بموت المستاجر\n(2 ) ومع ذلك اذا مات المستاجر جاز لورثته ان يطلبوا انتهاء العقد اذا\nاثبتوا انه بسبب موت مورثهم اصبحت اعباء العقد اثقل من ان تتحملها\nمواردهم ، او اصبح االيجار مجاوزا حدود حاجتهم . وفي هذه الحالة يجب\nان ترا\nعي مواعيد\nالتنبيه باالخالء المبينة في المادة\n563 ، وان يكون طلب ا\nاء نه\nالعقد في مدة\nستة\nاشهر\n. علي االكثر من وقت موت المستاجر",
+    "arabic_norm": "",
     "is_repealed": true,
     "repealed_range": [
       54,
@@ -1664,17 +1664,11 @@
     "repeal_note": "Article 54\n* Articles 54-80 have been repealed by Presidential\nDecree.",
     "source_page": 7,
     "source_pages": [
-      7,
-      81
+      7
     ],
     "citation": "Egyptian Civil Code, Article 60",
     "hierarchy_en": {},
-    "hierarchy_ar": {
-      "part": "القسم األول",
-      "book": "الكتاب الثاني",
-      "chapter": "الباب الثاني",
-      "section": "الفصل األول"
-    },
+    "hierarchy_ar": {},
     "flags": []
   },
   {
@@ -14013,9 +14007,9 @@
     "chapter": "Chapter I",
     "section": "Section I",
     "topic": null,
-    "text_ar": "مادة\n٤٣٨\nإذا نقضت قيمة المبيع قبل التسليم لتلف أصابه ، جاز للمشتري أما أن\nيطلب فسخ البيع إذا كان النقص جسيما بحيث لو طرأ قبل العقد لما تم البيع\n، وأما أن يبقي البيع مع إنقاص الثمن\nما دة\n٤٣٩\nيضمن البائع عدم التعرض للمشتري في االنتفاع بالمبيع كله أو بعضه\nسواء كان التعرض من فعله هو أو من فعل أجنبي يكون له وقت البيع حق\nعلى المبيع يحتج به على المشتري البيع إذا كان هذا الحق قد آل إليه من\nالبائع نفسه.",
+    "text_ar": "مادة\n٤٣٨\nإذا نقضت قيمة المبيع قبل التسليم لتلف أصابه ، جاز للمشتري أما أن\nيطلب فسخ البيع إذا كان النقص جسيما بحيث لو طرأ قبل العقد لما تم البيع\n، وأما أن يبقي البيع مع إنقاص الثمن",
     "text_en": "Article 438\nIf the value of the thing sold is diminished by\ndeterioration before delivery, the purchaser shall have\nthe option either of applying for the cancellation of the\nsale, if the diminution is so great that the sale would not\nhave taken place if the diminution had happened before\nthe contract was concluded, or of upholding the sale at a\nreduced price.",
-    "arabic_norm": "مادة\n438\nاذا نقضت قيمة المبيع قبل التسليم لتلف اصابه ، جاز للمشتري اما ان\nيطلب فسخ البيع اذا كان النقص جسيما بحيث لو طرا قبل العقد لما تم البيع\n، واما ان يبقي البيع مع انقاص الثمن\nما دة\n439\nيضمن البائع عدم التعرض للمشتري في االنتفاع بالمبيع كله او بعضه\nسواء كان التعرض من فعله هو او من فعل اجنبي يكون له وقت البيع حق\nعلي المبيع يحتج به علي المشتري البيع اذا كان هذا الحق قد ال اليه من\nالبائع نفسه.",
+    "arabic_norm": "مادة\n438\nاذا نقضت قيمة المبيع قبل التسليم لتلف اصابه ، جاز للمشتري اما ان\nيطلب فسخ البيع اذا كان النقص جسيما بحيث لو طرا قبل العقد لما تم البيع\n، واما ان يبقي البيع مع انقاص الثمن",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -14046,9 +14040,9 @@
     "chapter": "Chapter I",
     "section": "Section I",
     "topic": null,
-    "text_ar": "",
+    "text_ar": "ما دة\n٤٣٩\nيضمن البائع عدم التعرض للمشتري في االنتفاع بالمبيع كله أو بعضه\nسواء كان التعرض من فعله هو أو من فعل أجنبي يكون له وقت البيع حق\nعلى المبيع يحتج به على المشتري البيع إذا كان هذا الحق قد آل إليه من\nالبائع نفسه.",
     "text_en": "Article 439\nThe vendor warrants the purchaser against disturbance\nin his enjoyment of the thing sold both totally and\npartially, whether such disturbance is caused by his act\nor that of a third party having a right over the thing sold\nat the time of the sale enforceable against the purchaser.\nThe vendor is bound by his warranty, even if the right of\nthe third party has been established after the sale,\nprovided that it was derived from the vendor himself.",
-    "arabic_norm": "",
+    "arabic_norm": "ما دة\n439\nيضمن البائع عدم التعرض للمشتري في االنتفاع بالمبيع كله او بعضه\nسواء كان التعرض من فعله هو او من فعل اجنبي يكون له وقت البيع حق\nعلي المبيع يحتج به علي المشتري البيع اذا كان هذا الحق قد ال اليه من\nالبائع نفسه.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -14063,10 +14057,13 @@
       "chapter": "Chapter I",
       "section": "Section I"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثاني",
+      "chapter": "الباب األول",
+      "section": "الفصل األول"
+    },
+    "flags": []
   },
   {
     "id": "code-0440",
@@ -17482,9 +17479,9 @@
     "chapter": "Chapter I",
     "section": "Section V",
     "topic": "1- Loans for Consumption",
-    "text_ar": "مادة\n٥٤٢\nعلى المقترض أن يدفع الفوائد المتفق عليها عند حلول مواعيد است ، حقاقها\nفإذا لم يكن هناك اتفاق على فوائد اعتبر القرض بغير أجر.\nما دة\n٥٤٣\nينتهي القرض بإ\nنه\nاء الميعاد المتفق عليه.",
+    "text_ar": "مادة\n٥٤٢\nعلى المقترض أن يدفع الفوائد المتفق عليها عند حلول مواعيد است ، حقاقها\nفإذا لم يكن هناك اتفاق على فوائد اعتبر القرض بغير أجر.",
     "text_en": "Article 542\nThe borrower is under liability to pay the agreed interest\nas it falls due; in the absence of an agreement as regards\ninterest, the loan is deemed to be without consideration.",
-    "arabic_norm": "مادة\n542\nعلي المقترض ان يدفع الفوائد المتفق عليها عند حلول مواعيد است ، حقاقها\nفاذا لم يكن هناك اتفاق علي فوائد اعتبر القرض بغير اجر.\nما دة\n543\nينتهي القرض با\nنه\nاء الميعاد المتفق عليه.",
+    "arabic_norm": "مادة\n542\nعلي المقترض ان يدفع الفوائد المتفق عليها عند حلول مواعيد است ، حقاقها\nفاذا لم يكن هناك اتفاق علي فوائد اعتبر القرض بغير اجر.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -17516,9 +17513,9 @@
     "chapter": "Chapter I",
     "section": "Section V",
     "topic": "1- Loans for Consumption",
-    "text_ar": "",
+    "text_ar": "ما دة\n٥٤٣\nينتهي القرض بإ\nنه\nاء الميعاد المتفق عليه.",
     "text_en": "Article 543\nA loan comes to an end upon the expiration of the term\nagreed upon.",
-    "arabic_norm": "",
+    "arabic_norm": "ما دة\n543\nينتهي القرض با\nنه\nاء الميعاد المتفق عليه.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -17534,10 +17531,13 @@
       "section": "Section V",
       "topic": "1- Loans for Consumption"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثاني",
+      "chapter": "الباب األول",
+      "section": "الفصل الخامس"
+    },
+    "flags": []
   },
   {
     "id": "code-0544",
@@ -19493,9 +19493,9 @@
     "chapter": "Chapter II",
     "section": "Section I",
     "topic": "1- Leases Generally",
-    "text_ar": "",
+    "text_ar": "مادة\n٦٠ ١\n(١ .) ال ينتهي اإليجار بموت المؤجر وال بموت المستأجر\n(٢ ) ومع ذلك إذا مات المستأجر جاز لورثته أن يطلبوا انتهاء العقد إذا\nأثبتوا أنه بسبب موت مورثهم أصبحت أعباء العقد أثقل من أن تتحملها\nمواردهم ، أو أصبح اإليجار مجاوزًا حدود حاجتهم . وفى هذه الحالة يجب\nأن ترا\nعى مواعيد\nالتنبيه باإلخالء المبينة فى المادة\n٥٦٣ ، وأن يكون طلب إ\nاء نه\nالعقد فى مدة\nستة\nأشهر\n. على األكثر من وقت موت المستأجر",
     "text_en": "Article 601\nA contract of lease is not terminated either by the\ndeath of the lessor or of the lessee.\nIn the event of the death of the lessee, however, his\nheirs may claim the termination of the lease if\nthey establish that, as a result of the death of the\nperson whose estate they inherited, the burden of\nthe lease has become too heavy for their resources or\nthat the lease exceeds their needs.\nIn such an event, the periods of notice of termination\nlaid down in Article 563 shall be observed and\nthe claim for termination of the lease made within six\nmonths at the most from the date of death of\nthe lessee.",
-    "arabic_norm": "",
+    "arabic_norm": "مادة\n60 1\n(1 .) ال ينتهي االيجار بموت المؤجر وال بموت المستاجر\n(2 ) ومع ذلك اذا مات المستاجر جاز لورثته ان يطلبوا انتهاء العقد اذا\nاثبتوا انه بسبب موت مورثهم اصبحت اعباء العقد اثقل من ان تتحملها\nمواردهم ، او اصبح االيجار مجاوزا حدود حاجتهم . وفي هذه الحالة يجب\nان ترا\nعي مواعيد\nالتنبيه باالخالء المبينة في المادة\n563 ، وان يكون طلب ا\nاء نه\nالعقد في مدة\nستة\nاشهر\n. علي االكثر من وقت موت المستاجر",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -19511,10 +19511,13 @@
       "section": "Section I",
       "topic": "1- Leases Generally"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثاني",
+      "chapter": "الباب الثاني",
+      "section": "الفصل األول"
+    },
+    "flags": []
   },
   {
     "id": "code-0602",
@@ -19934,9 +19937,9 @@
     "chapter": "Chapter II",
     "section": "Section I",
     "topic": "1- Leases Generally",
-    "text_ar": "مادة\n٦١٤\n)١ (\nعلى المستأجر أن يقوم بإجراء اإلصالحات التى يقتضيها االنتفاع\nالمألوف باألرض المؤجرة ، ويلتزم بوجه خاص بتطهير وصيانة الترع\nوالمساقى والمراوى والمصارف ، وكذلك القيام بأعمال الصيانة المعتادة\nللطرق والسور والقناطر واألسوار واآلبار والمباني المعدة للسكنى أو\nلالستغالل كل هذا ما لم يقضى االتفاق أو العرف بغيره.\n)٢ (\nأما إقامة المباني واإلصالحات الكبرى للمباني القائمة وغيرها من\nملحقات العين ، فيلتزم ا المؤجر ما لم يقض االتفاق أو ا ، لعرف بغير ذلك\nوكذلك يكون الحكم فى اإلصالحات الالزمة لآلبار والترع ومجارى المياه\nوالخزانات.\nما دة\n٦١٥\nإذا منع المستأجر من \nيئة األرض للزراعة أو من بذرها أو هلك البذر كله\nأو أكثره وكان ذلك بسبب قوة قاهرة ، برئت ذمة المستأجر من األجرة كلها\nأو بعضها بحسب األحوال . كل هذا ما لم يوجد أتفق يقضى بغيره.",
+    "text_ar": "مادة\n٦١٤\n)١ (\nعلى المستأجر أن يقوم بإجراء اإلصالحات التى يقتضيها االنتفاع\nالمألوف باألرض المؤجرة ، ويلتزم بوجه خاص بتطهير وصيانة الترع\nوالمساقى والمراوى والمصارف ، وكذلك القيام بأعمال الصيانة المعتادة\nللطرق والسور والقناطر واألسوار واآلبار والمباني المعدة للسكنى أو\nلالستغالل كل هذا ما لم يقضى االتفاق أو العرف بغيره.\n)٢ (\nأما إقامة المباني واإلصالحات الكبرى للمباني القائمة وغيرها من\nملحقات العين ، فيلتزم ا المؤجر ما لم يقض االتفاق أو ا ، لعرف بغير ذلك\nوكذلك يكون الحكم فى اإلصالحات الالزمة لآلبار والترع ومجارى المياه\nوالخزانات.",
     "text_en": "Article 614\nSubject to an agreement or custom to the contrary, the\nlessee is bound to carry out repairs necessary for the\nnormal enjoyment of the leased land. He is in particular\nresponsible for the clearing and maintenance of canals,\ntrenches, channels and drains. He is also responsible for\nthe normal maintenance of roads, dikes, bridges,\nfencing, wells, dwelling houses and farm buildings.\nThe erection of buildings and major repairs to existing\nbuildings and dependencies on the land are, subject to\nany agreement or custom to the contrary, the\nresponsibility of the lessor. The same rule applies as\nregards repairs to wells, canals, water channels and\nreservoirs.",
-    "arabic_norm": "مادة\n614\n)1 (\nعلي المستاجر ان يقوم باجراء االصالحات التي يقتضيها االنتفاع\nالمالوف باالرض المؤجرة ، ويلتزم بوجه خاص بتطهير وصيانة الترع\nوالمساقي والمراوي والمصارف ، وكذلك القيام باعمال الصيانة المعتادة\nللطرق والسور والقناطر واالسوار واالبار والمباني المعدة للسكني او\nلالستغالل كل هذا ما لم يقضي االتفاق او العرف بغيره.\n)2 (\nاما اقامة المباني واالصالحات الكبري للمباني القائمة وغيرها من\nملحقات العين ، فيلتزم ا المؤجر ما لم يقض االتفاق او ا ، لعرف بغير ذلك\nوكذلك يكون الحكم في االصالحات الالزمة لالبار والترع ومجاري المياه\nوالخزانات.\nما دة\n615\nاذا منع المستاجر من \nيئة االرض للزراعة او من بذرها او هلك البذر كله\nاو اكثره وكان ذلك بسبب قوة قاهرة ، برئت ذمة المستاجر من االجرة كلها\nاو بعضها بحسب االحوال . كل هذا ما لم يوجد اتفق يقضي بغيره.",
+    "arabic_norm": "مادة\n614\n)1 (\nعلي المستاجر ان يقوم باجراء االصالحات التي يقتضيها االنتفاع\nالمالوف باالرض المؤجرة ، ويلتزم بوجه خاص بتطهير وصيانة الترع\nوالمساقي والمراوي والمصارف ، وكذلك القيام باعمال الصيانة المعتادة\nللطرق والسور والقناطر واالسوار واالبار والمباني المعدة للسكني او\nلالستغالل كل هذا ما لم يقضي االتفاق او العرف بغيره.\n)2 (\nاما اقامة المباني واالصالحات الكبري للمباني القائمة وغيرها من\nملحقات العين ، فيلتزم ا المؤجر ما لم يقض االتفاق او ا ، لعرف بغير ذلك\nوكذلك يكون الحكم في االصالحات الالزمة لالبار والترع ومجاري المياه\nوالخزانات.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -19968,9 +19971,9 @@
     "chapter": "Chapter II",
     "section": "Section I",
     "topic": "1- Leases Generally",
-    "text_ar": "",
+    "text_ar": "ما دة\n٦١٥\nإذا منع المستأجر من \nيئة األرض للزراعة أو من بذرها أو هلك البذر كله\nأو أكثره وكان ذلك بسبب قوة قاهرة ، برئت ذمة المستأجر من األجرة كلها\nأو بعضها بحسب األحوال . كل هذا ما لم يوجد أتفق يقضى بغيره.",
     "text_en": "Article 615\nIf the lease has, as a result of force majeure, been\nprevented from preparing or sowing the land, or if the\nwhole or the greater part of the seed has been\ndestroyed thereby, he is, subject to any agreement to\nthe contrary and as the case may be, relieved from\npayment of the whole or part of the rent.",
-    "arabic_norm": "",
+    "arabic_norm": "ما دة\n615\nاذا منع المستاجر من \nيئة االرض للزراعة او من بذرها او هلك البذر كله\nاو اكثره وكان ذلك بسبب قوة قاهرة ، برئت ذمة المستاجر من االجرة كلها\nاو بعضها بحسب االحوال . كل هذا ما لم يوجد اتفق يقضي بغيره.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -19987,10 +19990,13 @@
       "section": "Section I",
       "topic": "1- Leases Generally"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثاني",
+      "chapter": "الباب الثاني",
+      "section": "الفصل األول"
+    },
+    "flags": []
   },
   {
     "id": "code-0616",
@@ -20341,9 +20347,9 @@
     "chapter": "Chapter II",
     "section": "Section I",
     "topic": "1- Leases Generally",
-    "text_ar": "مادة\n٦٢٦\nال تنقضي المزارعة بموت المؤجر ، ولكنها تنقضي بموت المستأجر.\nماد ة\n٦٢٧\n)١ (إذا انتهت المزارعة قبل انقضاء مد\nته ا ، وجب ان يرد للمستأجر او\nورثته ما أنفقه المستأجر على المحصول الذى لم يتم نضجه مع تعويض\nعادل عما قام به المستأجر من العمل .\n)٢ (\nًومع ذلك إذا انتهت المزارعة بموت المستأجر ، جاز لورثته عوضا\nعن استعمال حقهم فى ا سترداد النفقات المتقدم ذكرها أن يحلوا محل\nمورثهم حتى ينضج المحصول ماداموا يستطيعون القيام بذلك على الوجه\nالمرضى.\nإيجار الوقف",
+    "text_ar": "مادة\n٦٢٦\nال تنقضي المزارعة بموت المؤجر ، ولكنها تنقضي بموت المستأجر.",
     "text_en": "Article 626\nThe amodiation does not determine on the death of the\nlessor, but determines on the death of the lessee.",
-    "arabic_norm": "مادة\n626\nال تنقضي المزارعة بموت المؤجر ، ولكنها تنقضي بموت المستاجر.\nماد ة\n627\n)1 (اذا انتهت المزارعة قبل انقضاء مد\nته ا ، وجب ان يرد للمستاجر او\nورثته ما انفقه المستاجر علي المحصول الذي لم يتم نضجه مع تعويض\nعادل عما قام به المستاجر من العمل .\n)2 (\nومع ذلك اذا انتهت المزارعة بموت المستاجر ، جاز لورثته عوضا\nعن استعمال حقهم في ا سترداد النفقات المتقدم ذكرها ان يحلوا محل\nمورثهم حتي ينضج المحصول ماداموا يستطيعون القيام بذلك علي الوجه\nالمرضي.\nايجار الوقف",
+    "arabic_norm": "مادة\n626\nال تنقضي المزارعة بموت المؤجر ، ولكنها تنقضي بموت المستاجر.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -20375,9 +20381,9 @@
     "chapter": "Chapter II",
     "section": "Section I",
     "topic": "1- Leases Generally",
-    "text_ar": "",
+    "text_ar": "ماد ة\n٦٢٧\n)١ (إذا انتهت المزارعة قبل انقضاء مد\nته ا ، وجب ان يرد للمستأجر او\nورثته ما أنفقه المستأجر على المحصول الذى لم يتم نضجه مع تعويض\nعادل عما قام به المستأجر من العمل .\n)٢ (\nًومع ذلك إذا انتهت المزارعة بموت المستأجر ، جاز لورثته عوضا\nعن استعمال حقهم فى ا سترداد النفقات المتقدم ذكرها أن يحلوا محل\nمورثهم حتى ينضج المحصول ماداموا يستطيعون القيام بذلك على الوجه\nالمرضى.\nإيجار الوقف",
     "text_en": "Article 627\nWhen the amodiation ceases before the end of its term,\nthe lessor must reimburse the lessee or his heirs for any\nexpenditure made in respect of the crops which have not\nripened, and pay equitable compensation for work that\nthe lessee has done on the land.\nIf, however, the amodiation is dissolved by the death of\nthe lessee, the heirs may, instead of claiming\nreimbursement of the expenses hereinbefore referred\nto, take the place of their principal until the crops have\nripened, provided they are in a position to continue the\nproper cultivation of the land.\nLease of Wakf property.",
-    "arabic_norm": "",
+    "arabic_norm": "ماد ة\n627\n)1 (اذا انتهت المزارعة قبل انقضاء مد\nته ا ، وجب ان يرد للمستاجر او\nورثته ما انفقه المستاجر علي المحصول الذي لم يتم نضجه مع تعويض\nعادل عما قام به المستاجر من العمل .\n)2 (\nومع ذلك اذا انتهت المزارعة بموت المستاجر ، جاز لورثته عوضا\nعن استعمال حقهم في ا سترداد النفقات المتقدم ذكرها ان يحلوا محل\nمورثهم حتي ينضج المحصول ماداموا يستطيعون القيام بذلك علي الوجه\nالمرضي.\nايجار الوقف",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -20393,10 +20399,13 @@
       "section": "Section I",
       "topic": "1- Leases Generally"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثاني",
+      "chapter": "الباب الثاني",
+      "section": "الفصل األول"
+    },
+    "flags": []
   },
   {
     "id": "code-0628",
@@ -21190,9 +21199,9 @@
     "chapter": "Chapter III",
     "section": "Section I",
     "topic": "1- Contracts for work",
-    "text_ar": "مادة\n٦٥١\n)١ (\nيضمن المهندس المعماري والمقاول متضامنين ما يحدث خالل عشر\nسنوات من \nدم كلى أو جزئي فيما شيدوه من مبان أو أقاموه من منشآت\nثابتة أخرى وذلك ولو كان التهدم ناشئاً عن عيب فى األرض ذا\nته ا ، أو\nكان ر العمل قد\nأجاز إقامة المنشآت المعيبة ، ما لم يكن المتعاقدان فى هذه\nالحالة قد أرادا أن تبقى هذه المنشآت مدة أقل من عشر سنوات .\n)٢ (\nويشمل الضمان المنصوص عليه فى الفقرة السابقة ما يوجد فى\nالمباني والمنشآت من عيوب يترتب عليها ته\nديد متانة البناء وسالمته.\n)٣ (\nوتبدأ مدة السنوات العشر من وقت تسلم العمل وال تسرى هذه المادة\nعلى ما قد يكون للمقاول من حق الرجوع على المقاولين من الباطن.\nما دة\n٦٥٢\nإذا أقتصر المهندس المعماري على وضع التصميمات دون أن يكلف\nالرقابة على التنفيذ ، لم يكن مسئوال إال عن العيوب التى أتت من التصميم.",
+    "text_ar": "مادة\n٦٥١\n)١ (\nيضمن المهندس المعماري والمقاول متضامنين ما يحدث خالل عشر\nسنوات من \nدم كلى أو جزئي فيما شيدوه من مبان أو أقاموه من منشآت\nثابتة أخرى وذلك ولو كان التهدم ناشئاً عن عيب فى األرض ذا\nته ا ، أو\nكان ر العمل قد\nأجاز إقامة المنشآت المعيبة ، ما لم يكن المتعاقدان فى هذه\nالحالة قد أرادا أن تبقى هذه المنشآت مدة أقل من عشر سنوات .\n)٢ (\nويشمل الضمان المنصوص عليه فى الفقرة السابقة ما يوجد فى\nالمباني والمنشآت من عيوب يترتب عليها ته\nديد متانة البناء وسالمته.\n)٣ (\nوتبدأ مدة السنوات العشر من وقت تسلم العمل وال تسرى هذه المادة\nعلى ما قد يكون للمقاول من حق الرجوع على المقاولين من الباطن.",
     "text_en": "Article 651\nThe architect and contractor are jointly and severally\nresponsible for a period of ten years for the total or\npartial demolition of constructions or other permanent\nworks erected by them, even if such destruction is due to\na defect in the ground itself, and even if the master\nauthorized the erection of the defective construction,\nunless, in this case, the constructions were intended by\nthe parties to last for less than ten years.\nThe warranty imposed by the preceding paragraph\nextends to defects in constructions and erections which\nendanger the solidity and security of the works.\nThe period of ten years runs from the date of delivery of\nthe works. This article does not apply to the rights of\naction which a contractor may have against his\nsubcontractor.",
-    "arabic_norm": "مادة\n651\n)1 (\nيضمن المهندس المعماري والمقاول متضامنين ما يحدث خالل عشر\nسنوات من \nدم كلي او جزئي فيما شيدوه من مبان او اقاموه من منشات\nثابتة اخري وذلك ولو كان التهدم ناشئا عن عيب في االرض ذا\nته ا ، او\nكان ر العمل قد\nاجاز اقامة المنشات المعيبة ، ما لم يكن المتعاقدان في هذه\nالحالة قد ارادا ان تبقي هذه المنشات مدة اقل من عشر سنوات .\n)2 (\nويشمل الضمان المنصوص عليه في الفقرة السابقة ما يوجد في\nالمباني والمنشات من عيوب يترتب عليها ته\nديد متانة البناء وسالمته.\n)3 (\nوتبدا مدة السنوات العشر من وقت تسلم العمل وال تسري هذه المادة\nعلي ما قد يكون للمقاول من حق الرجوع علي المقاولين من الباطن.\nما دة\n652\nاذا اقتصر المهندس المعماري علي وضع التصميمات دون ان يكلف\nالرقابة علي التنفيذ ، لم يكن مسئوال اال عن العيوب التي اتت من التصميم.",
+    "arabic_norm": "مادة\n651\n)1 (\nيضمن المهندس المعماري والمقاول متضامنين ما يحدث خالل عشر\nسنوات من \nدم كلي او جزئي فيما شيدوه من مبان او اقاموه من منشات\nثابتة اخري وذلك ولو كان التهدم ناشئا عن عيب في االرض ذا\nته ا ، او\nكان ر العمل قد\nاجاز اقامة المنشات المعيبة ، ما لم يكن المتعاقدان في هذه\nالحالة قد ارادا ان تبقي هذه المنشات مدة اقل من عشر سنوات .\n)2 (\nويشمل الضمان المنصوص عليه في الفقرة السابقة ما يوجد في\nالمباني والمنشات من عيوب يترتب عليها ته\nديد متانة البناء وسالمته.\n)3 (\nوتبدا مدة السنوات العشر من وقت تسلم العمل وال تسري هذه المادة\nعلي ما قد يكون للمقاول من حق الرجوع علي المقاولين من الباطن.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -21225,9 +21234,9 @@
     "chapter": "Chapter III",
     "section": "Section I",
     "topic": "1- Contracts for work",
-    "text_ar": "",
+    "text_ar": "ما دة\n٦٥٢\nإذا أقتصر المهندس المعماري على وضع التصميمات دون أن يكلف\nالرقابة على التنفيذ ، لم يكن مسئوال إال عن العيوب التى أتت من التصميم.",
     "text_en": "Article 652\nAn architect who only undertakes to prepare the plans\nwithout being entrusted with the supervision of their\nexecution, is responsible only for defects resulting from\nhis plans.",
-    "arabic_norm": "",
+    "arabic_norm": "ما دة\n652\nاذا اقتصر المهندس المعماري علي وضع التصميمات دون ان يكلف\nالرقابة علي التنفيذ ، لم يكن مسئوال اال عن العيوب التي اتت من التصميم.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -21243,10 +21252,13 @@
       "section": "Section I",
       "topic": "1- Contracts for work"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثاني",
+      "chapter": "الباب الثالث العقود",
+      "section": "الفصل األول"
+    },
+    "flags": []
   },
   {
     "id": "code-0653",
@@ -21461,9 +21473,9 @@
     "chapter": "Chapter III",
     "section": "Section I",
     "topic": "1- Contracts for work",
-    "text_ar": "مادة\n٦٥٩\nإذا لم يحدد األجر سلفاً وج ب الرجوع فى تحديده إلى قيمة العمل ونفقات\nالمقاول.\nم ادة\n٦٦٠\n)١ (\nًيستحق المهندس المعماري أجرا مستقال عن وضع التصميم وعمل\nالمقايسة وأخر عن إدارة األعمال .\n)٢ (فإن لم يحدد العقد هذه األجور وجب تقديرها وفقاً للعرف الجاري.\n)٣ (\n، غير أنه إذا لم يتم العمل بمقتضى التصميم الذى وضعه المهندس\nوجب تقدير األجر بحسب الزمن الذى استغرقه وضع التصميم مع مراعاة\nط\nبيعة هذا العمل.\nالمقاولة من\nالباطن",
+    "text_ar": "مادة\n٦٥٩\nإذا لم يحدد األجر سلفاً وج ب الرجوع فى تحديده إلى قيمة العمل ونفقات\nالمقاول.",
     "text_en": "Article 659\nWhen the price has not been fixed in advance, it must be\ncalculated according to the value of the work and the\nexpenses of the contractor.",
-    "arabic_norm": "مادة\n659\nاذا لم يحدد االجر سلفا وج ب الرجوع في تحديده الي قيمة العمل ونفقات\nالمقاول.\nم ادة\n660\n)1 (\nيستحق المهندس المعماري اجرا مستقال عن وضع التصميم وعمل\nالمقايسة واخر عن ادارة االعمال .\n)2 (فان لم يحدد العقد هذه االجور وجب تقديرها وفقا للعرف الجاري.\n)3 (\n، غير انه اذا لم يتم العمل بمقتضي التصميم الذي وضعه المهندس\nوجب تقدير االجر بحسب الزمن الذي استغرقه وضع التصميم مع مراعاة\nط\nبيعة هذا العمل.\nالمقاولة من\nالباطن",
+    "arabic_norm": "مادة\n659\nاذا لم يحدد االجر سلفا وج ب الرجوع في تحديده الي قيمة العمل ونفقات\nالمقاول.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -21495,9 +21507,9 @@
     "chapter": "Chapter III",
     "section": "Section I",
     "topic": "1- Contracts for work",
-    "text_ar": "",
+    "text_ar": "م ادة\n٦٦٠\n)١ (\nًيستحق المهندس المعماري أجرا مستقال عن وضع التصميم وعمل\nالمقايسة وأخر عن إدارة األعمال .\n)٢ (فإن لم يحدد العقد هذه األجور وجب تقديرها وفقاً للعرف الجاري.\n)٣ (\n، غير أنه إذا لم يتم العمل بمقتضى التصميم الذى وضعه المهندس\nوجب تقدير األجر بحسب الزمن الذى استغرقه وضع التصميم مع مراعاة\nط\nبيعة هذا العمل.\nالمقاولة من\nالباطن",
     "text_en": "Article 660\nAn architect is entitled to a separate fee for the\npreparation of the plans and specifications and another\nfor the supervision of the work.\nIf the fees are not specified in the contract they shall be\nfixed according to prevailing custom.\nIf, however, the work is not completed in conformity\nwith the plans prepared by the architect, the fee shall be\nassessed on the basis of the time taken in their\npreparation, taking into consideration the nature of the\nwork.\nSub-contracts",
-    "arabic_norm": "",
+    "arabic_norm": "م ادة\n660\n)1 (\nيستحق المهندس المعماري اجرا مستقال عن وضع التصميم وعمل\nالمقايسة واخر عن ادارة االعمال .\n)2 (فان لم يحدد العقد هذه االجور وجب تقديرها وفقا للعرف الجاري.\n)3 (\n، غير انه اذا لم يتم العمل بمقتضي التصميم الذي وضعه المهندس\nوجب تقدير االجر بحسب الزمن الذي استغرقه وضع التصميم مع مراعاة\nط\nبيعة هذا العمل.\nالمقاولة من\nالباطن",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -21513,10 +21525,13 @@
       "section": "Section I",
       "topic": "1- Contracts for work"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثاني",
+      "chapter": "الباب الثالث العقود",
+      "section": "الفصل األول"
+    },
+    "flags": []
   },
   {
     "id": "code-0661",
@@ -22925,9 +22940,9 @@
     "chapter": "Chapter III",
     "section": "Section III",
     "topic": "1- The Elements of Mandate",
-    "text_ar": "مادة\n٧٠٢\n)١ (\nالبد من وكالة خاصة فى كل عمل وليس من أعمال اإلدارة ، وبوجه\nخاص فى البيع والرهن والتبرعات والصلح واإلقرار والتحكيم وتوجيه\nاليمين والمرافعة أمام القضاء.\n)٢ (\nوالوكالة الخاصة فى نوع معين من أنواع األعمال القانونية تصح ولو\nبم يعين محل هذا العمل على وجه التخصيص ، إال إذا كان العمل من\nالتبرعات .\n)٣ (والوكالة الخاصة ال تجعل للوكيل صفة إال فى مباشرة األمو ر المحددة\nفيها وما تقتضيه هذه األمور من توابع ضرورية وفقا ً لطبيعة كل أمر\nوللعرف الجاري.\n٢- آثار الوكالة\nم ادة\n٧٠٣\n)١ (الوكيل ملزم بتنفيذ الوكالة دون أن يجاوز حدودها المرسومة .\n)٢ (\nعلى أن له أن يخرج عن هذه الحدود متى كان من المستحيل عليه\nأخطار الموكل سلفاً وكانت الظروف يغلب معها الظن بأن الموكل ما كان\nإال ليوافق على هذا التصرف ، وعلى الوكيل فى هذه الحالة أن يبادر بإبالغ\nالموكل خروجه عن حدود الوكالة.",
+    "text_ar": "مادة\n٧٠٢\n)١ (\nالبد من وكالة خاصة فى كل عمل وليس من أعمال اإلدارة ، وبوجه\nخاص فى البيع والرهن والتبرعات والصلح واإلقرار والتحكيم وتوجيه\nاليمين والمرافعة أمام القضاء.\n)٢ (\nوالوكالة الخاصة فى نوع معين من أنواع األعمال القانونية تصح ولو\nبم يعين محل هذا العمل على وجه التخصيص ، إال إذا كان العمل من\nالتبرعات .\n)٣ (والوكالة الخاصة ال تجعل للوكيل صفة إال فى مباشرة األمو ر المحددة\nفيها وما تقتضيه هذه األمور من توابع ضرورية وفقا ً لطبيعة كل أمر\nوللعرف الجاري.\n٢- آثار الوكالة",
     "text_en": "Article 702\nA special mandate, in respect of any act which is not an\nact of management, is required, and in particular for a\nsale, a mortgage, a gift, a compromise, an admission, an\narbitration, the tendering of an oath and representation\nbefore the Courts.\nA special mandate to carry out a certain category of\njuridical acts is valid, save as regards gratuitous acts,\neven though the object of such acts is not specified.\nA special mandate only confers on the mandatory a\npower to act in matters specified therein and in matters\nnecessarily incidental thereto in accordance with the\nnature of each matter and prevailing custom.",
-    "arabic_norm": "مادة\n702\n)1 (\nالبد من وكالة خاصة في كل عمل وليس من اعمال االدارة ، وبوجه\nخاص في البيع والرهن والتبرعات والصلح واالقرار والتحكيم وتوجيه\nاليمين والمرافعة امام القضاء.\n)2 (\nوالوكالة الخاصة في نوع معين من انواع االعمال القانونية تصح ولو\nبم يعين محل هذا العمل علي وجه التخصيص ، اال اذا كان العمل من\nالتبرعات .\n)3 (والوكالة الخاصة ال تجعل للوكيل صفة اال في مباشرة االمو ر المحددة\nفيها وما تقتضيه هذه االمور من توابع ضرورية وفقا  لطبيعة كل امر\nوللعرف الجاري.\n2- اثار الوكالة\nم ادة\n703\n)1 (الوكيل ملزم بتنفيذ الوكالة دون ان يجاوز حدودها المرسومة .\n)2 (\nعلي ان له ان يخرج عن هذه الحدود متي كان من المستحيل عليه\nاخطار الموكل سلفا وكانت الظروف يغلب معها الظن بان الموكل ما كان\nاال ليوافق علي هذا التصرف ، وعلي الوكيل في هذه الحالة ان يبادر بابالغ\nالموكل خروجه عن حدود الوكالة.",
+    "arabic_norm": "مادة\n702\n)1 (\nالبد من وكالة خاصة في كل عمل وليس من اعمال االدارة ، وبوجه\nخاص في البيع والرهن والتبرعات والصلح واالقرار والتحكيم وتوجيه\nاليمين والمرافعة امام القضاء.\n)2 (\nوالوكالة الخاصة في نوع معين من انواع االعمال القانونية تصح ولو\nبم يعين محل هذا العمل علي وجه التخصيص ، اال اذا كان العمل من\nالتبرعات .\n)3 (والوكالة الخاصة ال تجعل للوكيل صفة اال في مباشرة االمو ر المحددة\nفيها وما تقتضيه هذه االمور من توابع ضرورية وفقا  لطبيعة كل امر\nوللعرف الجاري.\n2- اثار الوكالة",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -22959,9 +22974,9 @@
     "chapter": "Chapter III",
     "section": "Section III",
     "topic": "2- The Effects of a Mandate",
-    "text_ar": "",
+    "text_ar": "م ادة\n٧٠٣\n)١ (الوكيل ملزم بتنفيذ الوكالة دون أن يجاوز حدودها المرسومة .\n)٢ (\nعلى أن له أن يخرج عن هذه الحدود متى كان من المستحيل عليه\nأخطار الموكل سلفاً وكانت الظروف يغلب معها الظن بأن الموكل ما كان\nإال ليوافق على هذا التصرف ، وعلى الوكيل فى هذه الحالة أن يبادر بإبالغ\nالموكل خروجه عن حدود الوكالة.",
     "text_en": "Article 703\nThe mandatary is bound to perform the mandate\nwithout exceeding the limits fixed therein.\nHe may, however, exceed these limits if he finds himself\nunable to notify the mandator thereof beforehand and if\nthe circumstances are such that it can be assumed that\nthe mandator could not have failed to approve the act.\nIn such a case, the mandatory is bound to inform the\nmandator immediately that he has exceeded the limits of\nmandate.",
-    "arabic_norm": "",
+    "arabic_norm": "م ادة\n703\n)1 (الوكيل ملزم بتنفيذ الوكالة دون ان يجاوز حدودها المرسومة .\n)2 (\nعلي ان له ان يخرج عن هذه الحدود متي كان من المستحيل عليه\nاخطار الموكل سلفا وكانت الظروف يغلب معها الظن بان الموكل ما كان\nاال ليوافق علي هذا التصرف ، وعلي الوكيل في هذه الحالة ان يبادر بابالغ\nالموكل خروجه عن حدود الوكالة.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -22977,10 +22992,13 @@
       "section": "Section III",
       "topic": "2- The Effects of a Mandate"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثاني",
+      "chapter": "الباب الثالث العقود",
+      "section": "الفصل الثالث"
+    },
+    "flags": []
   },
   {
     "id": "code-0704",
@@ -28076,9 +28094,9 @@
     "chapter": "Chapter I",
     "section": "Section I The Right of Ownership in General",
     "topic": "3- Joint Ownership",
-    "text_ar": "مادة\n٨٥٤\n)١ (\nللشركاء أصحاب القدر األكبر من قيمة الحصص أن يعينوا من بينهم\nلإلدارة واحدا أو أكثر ، وللمدير أن يدخل على ملكية األسرة من التغيير فى\nالغرض الذى أعد له المال المشترك ما يحسن به طرق االنتفاع به ، ذا المال\nمال لم يكن هناك اتفاق على غير ذلك .\n)٢ (ويجوز عزل المدير بالطريقة التى عين \n، ا ولو أتفق على غير ذلك\nكما يجوز للمحكمة أن تعزله بناء على طب أى شريك إذا وجد سبب قوى\nيبرر هذا العزل .\nما دة\n٨٥٥\nفيما عدا األحكام السابقة تنطبق قواعد الملكية الشائعة وقواعد الوكالة على\nملكية األسرة .\nملكيات الطبقات",
+    "text_ar": "مادة\n٨٥٤\n)١ (\nللشركاء أصحاب القدر األكبر من قيمة الحصص أن يعينوا من بينهم\nلإلدارة واحدا أو أكثر ، وللمدير أن يدخل على ملكية األسرة من التغيير فى\nالغرض الذى أعد له المال المشترك ما يحسن به طرق االنتفاع به ، ذا المال\nمال لم يكن هناك اتفاق على غير ذلك .\n)٢ (ويجوز عزل المدير بالطريقة التى عين \n، ا ولو أتفق على غير ذلك\nكما يجوز للمحكمة أن تعزله بناء على طب أى شريك إذا وجد سبب قوى\nيبرر هذا العزل .",
     "text_en": "Article 854\nCo-owners who own the majority in value of the shares,\nmay appoint amongst themselves one or more\nmanagers. Subject to any agreement to the contrary, the\nmanager may introduce such changes in the intended\nuse of the property held in common as may ensure a\nbetter enjoyment of the property.\nA manager may be discharged in the same manner as he\nwas appointed, notwithstanding any agreement to the\ncontrary. The Court may also, upon the demand of any\nowner, discharge him if there are serious grounds to do\nso.",
-    "arabic_norm": "مادة\n854\n)1 (\nللشركاء اصحاب القدر االكبر من قيمة الحصص ان يعينوا من بينهم\nلالدارة واحدا او اكثر ، وللمدير ان يدخل علي ملكية االسرة من التغيير في\nالغرض الذي اعد له المال المشترك ما يحسن به طرق االنتفاع به ، ذا المال\nمال لم يكن هناك اتفاق علي غير ذلك .\n)2 (ويجوز عزل المدير بالطريقة التي عين \n، ا ولو اتفق علي غير ذلك\nكما يجوز للمحكمة ان تعزله بناء علي طب اي شريك اذا وجد سبب قوي\nيبرر هذا العزل .\nما دة\n855\nفيما عدا االحكام السابقة تنطبق قواعد الملكية الشائعة وقواعد الوكالة علي\nملكية االسرة .\nملكيات الطبقات",
+    "arabic_norm": "مادة\n854\n)1 (\nللشركاء اصحاب القدر االكبر من قيمة الحصص ان يعينوا من بينهم\nلالدارة واحدا او اكثر ، وللمدير ان يدخل علي ملكية االسرة من التغيير في\nالغرض الذي اعد له المال المشترك ما يحسن به طرق االنتفاع به ، ذا المال\nمال لم يكن هناك اتفاق علي غير ذلك .\n)2 (ويجوز عزل المدير بالطريقة التي عين \n، ا ولو اتفق علي غير ذلك\nكما يجوز للمحكمة ان تعزله بناء علي طب اي شريك اذا وجد سبب قوي\nيبرر هذا العزل .",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -28110,9 +28128,9 @@
     "chapter": "Chapter I",
     "section": "Section I The Right of Ownership in General",
     "topic": "3- Joint Ownership",
-    "text_ar": "",
+    "text_ar": "ما دة\n٨٥٥\nفيما عدا األحكام السابقة تنطبق قواعد الملكية الشائعة وقواعد الوكالة على\nملكية األسرة .\nملكيات الطبقات",
     "text_en": "Article 855\nSubject to the preceding provisions, family joint\nownership will be governed by the provisions of the law\nrelating to joint property and to mandate.\nOwnership of Storeys in Buildings",
-    "arabic_norm": "",
+    "arabic_norm": "ما دة\n855\nفيما عدا االحكام السابقة تنطبق قواعد الملكية الشائعة وقواعد الوكالة علي\nملكية االسرة .\nملكيات الطبقات",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -28128,10 +28146,13 @@
       "section": "Section I The Right of Ownership in General",
       "topic": "3- Joint Ownership"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثالث",
+      "chapter": "الباب األول",
+      "section": "الفصل األول"
+    },
+    "flags": []
   },
   {
     "id": "code-0856",
@@ -31860,9 +31881,9 @@
     "chapter": "Chapter I",
     "section": "Section II",
     "topic": "7- Possession",
-    "text_ar": "مادة\n٩٦٥\n)١ (\n، يعد حسن النية من يجوز الحق وهو يجهل أنه يعتدي على حق الغير\nإال إذا كان هذا الحق ناشئا عن خطأ جسيم .\n)٢ (\nفإذا كان الحائز شخصا معنويا\nفالعبرة بنية من يمثله .\n)٣ (وحسن النية يفترض دائما ما لم يقم الدليل على العكس .\nم ادة\n٩٦٦\n)١ (ال تزول صفة حسن النية لدى الحائز إال من\nالوقت الذى يصبح فيه\nعالما أن حيازته اعتداء على حق الغير.\n)٢ (\nويزول حسن النية من وقت إعالن الحائز بعيوب حيازته فى صحيفة\nالدعوى ، ويعد سيئ النية من اغتصب باإلكراه الحيازة من غيره .",
+    "text_ar": "مادة\n٩٦٥\n)١ (\n، يعد حسن النية من يجوز الحق وهو يجهل أنه يعتدي على حق الغير\nإال إذا كان هذا الحق ناشئا عن خطأ جسيم .\n)٢ (\nفإذا كان الحائز شخصا معنويا\nفالعبرة بنية من يمثله .\n)٣ (وحسن النية يفترض دائما ما لم يقم الدليل على العكس .",
     "text_en": "Article 965\nThe possessor of a right who is unaware that he infringes\nthe right of another is presumed to be in good faith,\nunless his ignorance was the result of a serious mistake.\nIf the possessor is a juristic person, it is the good or bad\nfaith of its representative that will be taken into account.\nGood faith is always presumed in the absence of proof to\nthe contrary.",
-    "arabic_norm": "مادة\n965\n)1 (\n، يعد حسن النية من يجوز الحق وهو يجهل انه يعتدي علي حق الغير\nاال اذا كان هذا الحق ناشئا عن خطا جسيم .\n)2 (\nفاذا كان الحائز شخصا معنويا\nفالعبرة بنية من يمثله .\n)3 (وحسن النية يفترض دائما ما لم يقم الدليل علي العكس .\nم ادة\n966\n)1 (ال تزول صفة حسن النية لدي الحائز اال من\nالوقت الذي يصبح فيه\nعالما ان حيازته اعتداء علي حق الغير.\n)2 (\nويزول حسن النية من وقت اعالن الحائز بعيوب حيازته في صحيفة\nالدعوي ، ويعد سيئ النية من اغتصب باالكراه الحيازة من غيره .",
+    "arabic_norm": "مادة\n965\n)1 (\n، يعد حسن النية من يجوز الحق وهو يجهل انه يعتدي علي حق الغير\nاال اذا كان هذا الحق ناشئا عن خطا جسيم .\n)2 (\nفاذا كان الحائز شخصا معنويا\nفالعبرة بنية من يمثله .\n)3 (وحسن النية يفترض دائما ما لم يقم الدليل علي العكس .",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -31894,9 +31915,9 @@
     "chapter": "Chapter I",
     "section": "Section II",
     "topic": "7- Possession",
-    "text_ar": "",
+    "text_ar": "م ادة\n٩٦٦\n)١ (ال تزول صفة حسن النية لدى الحائز إال من\nالوقت الذى يصبح فيه\nعالما أن حيازته اعتداء على حق الغير.\n)٢ (\nويزول حسن النية من وقت إعالن الحائز بعيوب حيازته فى صحيفة\nالدعوى ، ويعد سيئ النية من اغتصب باإلكراه الحيازة من غيره .",
     "text_en": "Article 966\nThe good faith of a possessor ceases only from such time\nas he becomes aware that his possession infringes the\nrights of another.\nGood faith ceases as soon as the defects of the\npossession have been notified to the possessor in the\nwrit by which legal proceedings are commenced. A\nperson who has usurped the possession of another by\nviolence is deemed to have acted in bad faith.",
-    "arabic_norm": "",
+    "arabic_norm": "م ادة\n966\n)1 (ال تزول صفة حسن النية لدي الحائز اال من\nالوقت الذي يصبح فيه\nعالما ان حيازته اعتداء علي حق الغير.\n)2 (\nويزول حسن النية من وقت اعالن الحائز بعيوب حيازته في صحيفة\nالدعوي ، ويعد سيئ النية من اغتصب باالكراه الحيازة من غيره .",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -31912,10 +31933,13 @@
       "section": "Section II",
       "topic": "7- Possession"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثالث",
+      "chapter": "الباب األول",
+      "section": "الفصل الثاني"
+    },
+    "flags": []
   },
   {
     "id": "code-0967",
@@ -33183,9 +33207,9 @@
     "chapter": "Chapter II",
     "section": "Section II",
     "topic": null,
-    "text_ar": "مادة\n١٠٠٤\n)١ (ال يجوز التحكير بأقل من أجرة المثل .\n)٢ (\nوتزيد هذه األجرة أو تنقص كلما بلغ التغيير فى أجرة المثل حدا يجوز\nالخمس زيادة أو نقصاً ، على أن يكون قد مضى ثماني سنوات على أخر\nتقدير .\nم ادة\n١٠٠٥\nيرجع فى تقدير الزيادة أو النقص إلى ما لألرض من قيمة إيجاريه وقت\nالتقدير ، ويراعى فى ذلك صقع األرض ورغبات الناس فيها بغض النظر\nعما يوجد فيها من بناء أو غرس ، ودون اعتبار لما أحدثه المحتكر فيها من\nتحسين أو إتالف فى ذات األرض أو فى صقع الجهة ، ودون تأثر بما\nللمحتكر على األرض من حق القرار .",
+    "text_ar": "مادة\n١٠٠٤\n)١ (ال يجوز التحكير بأقل من أجرة المثل .\n)٢ (\nوتزيد هذه األجرة أو تنقص كلما بلغ التغيير فى أجرة المثل حدا يجوز\nالخمس زيادة أو نقصاً ، على أن يكون قد مضى ثماني سنوات على أخر\nتقدير .",
     "text_en": "Article 1004\nA hekr cannot be concluded at a rent less than that paid\nfor similar lands.\nThis rent is increased or diminished at the rental value of\nsimilar lands rises or falls by more than one fifth,\nprovided that eight years have passed since the last\nvaluation.",
-    "arabic_norm": "مادة\n1004\n)1 (ال يجوز التحكير باقل من اجرة المثل .\n)2 (\nوتزيد هذه االجرة او تنقص كلما بلغ التغيير في اجرة المثل حدا يجوز\nالخمس زيادة او نقصا ، علي ان يكون قد مضي ثماني سنوات علي اخر\nتقدير .\nم ادة\n1005\nيرجع في تقدير الزيادة او النقص الي ما لالرض من قيمة ايجاريه وقت\nالتقدير ، ويراعي في ذلك صقع االرض ورغبات الناس فيها بغض النظر\nعما يوجد فيها من بناء او غرس ، ودون اعتبار لما احدثه المحتكر فيها من\nتحسين او اتالف في ذات االرض او في صقع الجهة ، ودون تاثر بما\nللمحتكر علي االرض من حق القرار .",
+    "arabic_norm": "مادة\n1004\n)1 (ال يجوز التحكير باقل من اجرة المثل .\n)2 (\nوتزيد هذه االجرة او تنقص كلما بلغ التغيير في اجرة المثل حدا يجوز\nالخمس زيادة او نقصا ، علي ان يكون قد مضي ثماني سنوات علي اخر\nتقدير .",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -33216,9 +33240,9 @@
     "chapter": "Chapter II",
     "section": "Section II",
     "topic": null,
-    "text_ar": "",
+    "text_ar": "م ادة\n١٠٠٥\nيرجع فى تقدير الزيادة أو النقص إلى ما لألرض من قيمة إيجاريه وقت\nالتقدير ، ويراعى فى ذلك صقع األرض ورغبات الناس فيها بغض النظر\nعما يوجد فيها من بناء أو غرس ، ودون اعتبار لما أحدثه المحتكر فيها من\nتحسين أو إتالف فى ذات األرض أو فى صقع الجهة ، ودون تأثر بما\nللمحتكر على األرض من حق القرار .",
     "text_en": "Article 1005\nThe estimation of this rise or fall is made on the basis of\nthe rental value of the land at the time of valuation,\ntaking into account its marketable value and the demand\nfor it, and regardless of any constructions or plantations\non it.\nImprovements or deteriorations caused to the land or to\nthe value of the neighboring land by the grantee of the\nhekr, as well as his surface rights over the land, should\nbe disregarded.",
-    "arabic_norm": "",
+    "arabic_norm": "م ادة\n1005\nيرجع في تقدير الزيادة او النقص الي ما لالرض من قيمة ايجاريه وقت\nالتقدير ، ويراعي في ذلك صقع االرض ورغبات الناس فيها بغض النظر\nعما يوجد فيها من بناء او غرس ، ودون اعتبار لما احدثه المحتكر فيها من\nتحسين او اتالف في ذات االرض او في صقع الجهة ، ودون تاثر بما\nللمحتكر علي االرض من حق القرار .",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -33233,10 +33257,13 @@
       "chapter": "Chapter II",
       "section": "Section II"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الثالث",
+      "chapter": "الباب الثاني",
+      "section": "الفصل الثاني"
+    },
+    "flags": []
   },
   {
     "id": "code-1006",
@@ -35956,9 +35983,9 @@
     "chapter": "Chapter II",
     "section": "Section I",
     "topic": null,
-    "text_ar": "مادة\n١٠٨٧\nيجوز الحصول على حق اختصاص بناء على حكم يثبت صلحا أو اتفاقا تم\nبين الخصوم . ولكن ال يجوز الحصول على حق اخ تصاص بناء على حكم\nصادر بصحة التوقيع.\nم ادة\n١٠٨٨\nال يجوز أخذ حق االختصاص إال على عقار أو عقارات معينة مملوكة\nللمدين وقت قيد هذا الحق وجائز بيعها بالمزاد العلنى .",
+    "text_ar": "مادة\n١٠٨٧\nيجوز الحصول على حق اختصاص بناء على حكم يثبت صلحا أو اتفاقا تم\nبين الخصوم . ولكن ال يجوز الحصول على حق اخ تصاص بناء على حكم\nصادر بصحة التوقيع.",
     "text_en": "Article 1087\nA judgment charge may be obtained by virtue of a\njudgment confirming a compromise or an agreement\nbetween the parties, but not by virtue of a judgment\nrendered as to the validity of a signature.",
-    "arabic_norm": "مادة\n1087\nيجوز الحصول علي حق اختصاص بناء علي حكم يثبت صلحا او اتفاقا تم\nبين الخصوم . ولكن ال يجوز الحصول علي حق اخ تصاص بناء علي حكم\nصادر بصحة التوقيع.\nم ادة\n1088\nال يجوز اخذ حق االختصاص اال علي عقار او عقارات معينة مملوكة\nللمدين وقت قيد هذا الحق وجائز بيعها بالمزاد العلني .",
+    "arabic_norm": "مادة\n1087\nيجوز الحصول علي حق اختصاص بناء علي حكم يثبت صلحا او اتفاقا تم\nبين الخصوم . ولكن ال يجوز الحصول علي حق اخ تصاص بناء علي حكم\nصادر بصحة التوقيع.",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -35989,9 +36016,9 @@
     "chapter": "Chapter II",
     "section": "Section I",
     "topic": null,
-    "text_ar": "",
+    "text_ar": "م ادة\n١٠٨٨\nال يجوز أخذ حق االختصاص إال على عقار أو عقارات معينة مملوكة\nللمدين وقت قيد هذا الحق وجائز بيعها بالمزاد العلنى .",
     "text_en": "Article 1088\nA judgment charge can only be obtained on one or more\nspecific immovables belonging to the debtor at the time\nof the inscription of this right and capable of being sold\nby public auction.",
-    "arabic_norm": "",
+    "arabic_norm": "م ادة\n1088\nال يجوز اخذ حق االختصاص اال علي عقار او عقارات معينة مملوكة\nللمدين وقت قيد هذا الحق وجائز بيعها بالمزاد العلني .",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -36006,10 +36033,13 @@
       "chapter": "Chapter II",
       "section": "Section I"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الرابع",
+      "chapter": "الباب الثاني",
+      "section": "الفصل األول"
+    },
+    "flags": []
   },
   {
     "id": "code-1089",
@@ -36085,9 +36115,9 @@
     "chapter": "Chapter II",
     "section": "Section I",
     "topic": null,
-    "text_ar": "مادة\n١٠٩١\nعلى قلم الكتاب إعالن باألمر الصادر باالختصاص فى نفس اليوم الذى\nيصدر فيه هذا األمر ، وعليه أيضا أن يؤشر به ذا األمر على صورة الحكم\nأو على الشهادة المرفقة بالطلب المقدم ألخذ االختصاص ، وأن يخطر قلم\nكتاب المحكمة الصادر منها الحكم للتأشير بذلك على كل صورة أو شهادة\nأخرى يسلمها للدائن .\nم ادة\n١٠٩٢\n)١ (\n، يجوز للمدين أن يتظلم من األمر الصادر باالختصاص أمام األمر\nكما يجوز له أن يرفع هذا التظلم إلى\nالمحكمة االبتدائية .\n)٢ (\nويجب أن يؤشر على هامش القيد بكل أمر أو حكم قضى بإلغاء األمر\nالصادر باالختصاص .",
+    "text_ar": "مادة\n١٠٩١\nعلى قلم الكتاب إعالن باألمر الصادر باالختصاص فى نفس اليوم الذى\nيصدر فيه هذا األمر ، وعليه أيضا أن يؤشر به ذا األمر على صورة الحكم\nأو على الشهادة المرفقة بالطلب المقدم ألخذ االختصاص ، وأن يخطر قلم\nكتاب المحكمة الصادر منها الحكم للتأشير بذلك على كل صورة أو شهادة\nأخرى يسلمها للدائن .",
     "text_en": "Article 1091\nUpon the same day as the order authorizing the\njudgment charge is rendered, the greffier of the Court\nmust notify it to the debtor, endorse it on the\nauthenticated copy of the judgment or on the certificate\nannexed to the application for a judgment charge, and\ninform the greffier of the Court that has rendered the\njudgment so that he may endorse the order on any other\ncopy of the judgment or on any other certificate that will\nbe delivered to the creditor.",
-    "arabic_norm": "مادة\n1091\nعلي قلم الكتاب اعالن باالمر الصادر باالختصاص في نفس اليوم الذي\nيصدر فيه هذا االمر ، وعليه ايضا ان يؤشر به ذا االمر علي صورة الحكم\nاو علي الشهادة المرفقة بالطلب المقدم الخذ االختصاص ، وان يخطر قلم\nكتاب المحكمة الصادر منها الحكم للتاشير بذلك علي كل صورة او شهادة\nاخري يسلمها للدائن .\nم ادة\n1092\n)1 (\n، يجوز للمدين ان يتظلم من االمر الصادر باالختصاص امام االمر\nكما يجوز له ان يرفع هذا التظلم الي\nالمحكمة االبتدائية .\n)2 (\nويجب ان يؤشر علي هامش القيد بكل امر او حكم قضي بالغاء االمر\nالصادر باالختصاص .",
+    "arabic_norm": "مادة\n1091\nعلي قلم الكتاب اعالن باالمر الصادر باالختصاص في نفس اليوم الذي\nيصدر فيه هذا االمر ، وعليه ايضا ان يؤشر به ذا االمر علي صورة الحكم\nاو علي الشهادة المرفقة بالطلب المقدم الخذ االختصاص ، وان يخطر قلم\nكتاب المحكمة الصادر منها الحكم للتاشير بذلك علي كل صورة او شهادة\nاخري يسلمها للدائن .",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -36119,9 +36149,9 @@
     "chapter": "Chapter II",
     "section": "Section I",
     "topic": null,
-    "text_ar": "",
+    "text_ar": "م ادة\n١٠٩٢\n)١ (\n، يجوز للمدين أن يتظلم من األمر الصادر باالختصاص أمام األمر\nكما يجوز له أن يرفع هذا التظلم إلى\nالمحكمة االبتدائية .\n)٢ (\nويجب أن يؤشر على هامش القيد بكل أمر أو حكم قضى بإلغاء األمر\nالصادر باالختصاص .",
     "text_en": "Article 1092\nThe debtor may lodge an appeal against the order\nauthorizing the judgment charge either before the judge\nwho has given the order or before the Court of First\nInstance.\nAn endorsement must be made, in the margin of the\ninscription, of any order or of any judgment annulling the\norder which has authorized the judgment charge.",
-    "arabic_norm": "",
+    "arabic_norm": "م ادة\n1092\n)1 (\n، يجوز للمدين ان يتظلم من االمر الصادر باالختصاص امام االمر\nكما يجوز له ان يرفع هذا التظلم الي\nالمحكمة االبتدائية .\n)2 (\nويجب ان يؤشر علي هامش القيد بكل امر او حكم قضي بالغاء االمر\nالصادر باالختصاص .",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -36136,10 +36166,13 @@
       "chapter": "Chapter II",
       "section": "Section I"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الرابع",
+      "chapter": "الباب الثاني",
+      "section": "الفصل األول"
+    },
+    "flags": []
   },
   {
     "id": "code-1093",
@@ -36962,9 +36995,9 @@
     "chapter": "Chapter III",
     "section": "Section IV",
     "topic": "2- Pledge of a Movable",
-    "text_ar": "مادة\n١١١٧\nيشترط لنفاذ رهن المنقول فى حق الغير إلى جانب انتقال الحيازة أن يدون\nالعقد فى ورقة ثابتة التاريخ يبين فيها المبلغ المضمون بالرهن والعين\nالمرهونة بيانا كافيا– وهذا التاريخ الثابت يحدد مرتبة الدائن المر\nن ته .\nم ادة\n١١١٨\n)١ (\nاألحكام المتعلقة باآلثار التى تترتب على حيازة المنقوالت المادية\nوالسندات التى لحاملها تسرى على رهن المنقول .\n)٢ (ويوجه خاص يكون للمر\n ن إذا كان حسن النية أن يتمسك بحقه فى\nالرهن ولو كان الراهن ال يملك التصرف فى الشيء المرهون كما يجوز\nمن جهة أخرى لكل حائز حسن النية أن يتمسك بالحق الذى كسبه على\nالشيء المرهون ولو كان ذلك الحقا لتاريخ الرهن",
+    "text_ar": "مادة\n١١١٧\nيشترط لنفاذ رهن المنقول فى حق الغير إلى جانب انتقال الحيازة أن يدون\nالعقد فى ورقة ثابتة التاريخ يبين فيها المبلغ المضمون بالرهن والعين\nالمرهونة بيانا كافيا– وهذا التاريخ الثابت يحدد مرتبة الدائن المر\nن ته .",
     "text_en": "Article 1117\nA pledge of a movable is only valid against third parties\nif, in addition to the delivery of the movable pledged, it is\nconstituted by a written contract adequately setting out\nthe amount of the secured debt and the object of the\npledge and having an established date. The rank of the\nsecured creditor will be fixed in accordance with such\nestablished date.",
-    "arabic_norm": "مادة\n1117\nيشترط لنفاذ رهن المنقول في حق الغير الي جانب انتقال الحيازة ان يدون\nالعقد في ورقة ثابتة التاريخ يبين فيها المبلغ المضمون بالرهن والعين\nالمرهونة بيانا كافيا– وهذا التاريخ الثابت يحدد مرتبة الدائن المر\nن ته .\nم ادة\n1118\n)1 (\nاالحكام المتعلقة باالثار التي تترتب علي حيازة المنقوالت المادية\nوالسندات التي لحاملها تسري علي رهن المنقول .\n)2 (ويوجه خاص يكون للمر\n ن اذا كان حسن النية ان يتمسك بحقه في\nالرهن ولو كان الراهن ال يملك التصرف في الشيء المرهون كما يجوز\nمن جهة اخري لكل حائز حسن النية ان يتمسك بالحق الذي كسبه علي\nالشيء المرهون ولو كان ذلك الحقا لتاريخ الرهن",
+    "arabic_norm": "مادة\n1117\nيشترط لنفاذ رهن المنقول في حق الغير الي جانب انتقال الحيازة ان يدون\nالعقد في ورقة ثابتة التاريخ يبين فيها المبلغ المضمون بالرهن والعين\nالمرهونة بيانا كافيا– وهذا التاريخ الثابت يحدد مرتبة الدائن المر\nن ته .",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -36996,9 +37029,9 @@
     "chapter": "Chapter III",
     "section": "Section IV",
     "topic": "2- Pledge of a Movable",
-    "text_ar": "",
+    "text_ar": "م ادة\n١١١٨\n)١ (\nاألحكام المتعلقة باآلثار التى تترتب على حيازة المنقوالت المادية\nوالسندات التى لحاملها تسرى على رهن المنقول .\n)٢ (ويوجه خاص يكون للمر\n ن إذا كان حسن النية أن يتمسك بحقه فى\nالرهن ولو كان الراهن ال يملك التصرف فى الشيء المرهون كما يجوز\nمن جهة أخرى لكل حائز حسن النية أن يتمسك بالحق الذى كسبه على\nالشيء المرهون ولو كان ذلك الحقا لتاريخ الرهن",
     "text_en": "Article 1118\nThe rules relating to the effects of possession of material\nmovables and of bearer securities apply to the pledge of\na movable.\nA pledgee in good faith may, in particular, avail himself\nof his right of pledge even if the pledgor was not\nqualified to dispose of the thing pledged. On the other\nhand, a third party holder in good faith, even after the\ndate of the pledge, may avail himself of the right he has\nacquired over the thing pledged.",
-    "arabic_norm": "",
+    "arabic_norm": "م ادة\n1118\n)1 (\nاالحكام المتعلقة باالثار التي تترتب علي حيازة المنقوالت المادية\nوالسندات التي لحاملها تسري علي رهن المنقول .\n)2 (ويوجه خاص يكون للمر\n ن اذا كان حسن النية ان يتمسك بحقه في\nالرهن ولو كان الراهن ال يملك التصرف في الشيء المرهون كما يجوز\nمن جهة اخري لكل حائز حسن النية ان يتمسك بالحق الذي كسبه علي\nالشيء المرهون ولو كان ذلك الحقا لتاريخ الرهن",
     "is_repealed": false,
     "repealed_range": null,
     "repeal_note": null,
@@ -37014,10 +37047,13 @@
       "section": "Section IV",
       "topic": "2- Pledge of a Movable"
     },
-    "hierarchy_ar": {},
-    "flags": [
-      "missing_ar"
-    ]
+    "hierarchy_ar": {
+      "part": "القسم األول",
+      "book": "الكتاب الرابع",
+      "chapter": "الباب الثالث",
+      "section": "الفصل الرابع"
+    },
+    "flags": []
   },
   {
     "id": "code-1119",

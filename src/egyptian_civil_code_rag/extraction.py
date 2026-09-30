@@ -145,6 +145,35 @@ def detect_article(text: str, language: str) -> int | None:
     if language == "en":
         match = EN_ARTICLE_RE.match(text)
         return int(match.group(1)) if match else None
+    #### ##### edit start-------------------------------------------------------------
+   # Handles split Arabic article markers such as:
+    # "ماد ة\n٦٢٧" or "ما دة\n٤٣٩"
+    """
+    split_marker = re.match(
+        r"^\s*م\s*ا\s*د\s*ة\s*[\r\n\s]*([٠-٩۰-۹]+)",
+        text[:100],
+    )
+    if split_marker:
+        number = normalize_digits(split_marker.group(1))
+        return int(number)
+
+    """
+    # Handles spaces inside the Arabic article number:
+    # "مادة\n٦٠ ١" -> 601 
+
+    spaced_marker = re.match(
+    r"^\s*م\s*ا\s*د\s*ة\s*[\r\n\s]*([٠-٩۰-۹]+(?:\s+[٠-٩۰-۹]+)*)",
+    text[:100],
+    )
+    if spaced_marker:
+       number = spaced_marker.group(1).replace(" ", "")
+       number = normalize_digits(number)
+       return int(number)
+
+   
+
+
+    ########## end -------------------------------------------------------------------
 
     normalized = normalize_digits(text)
     prefix = re.sub(r"^[\s(\[{]+", "", normalized[:100])
