@@ -13,6 +13,7 @@ dist/
 .env
 .env.*
 !.env.example
+*-Access-Keys.txt
 .dvc/cache/
 data/raw/*.pdf
 reports/generated/

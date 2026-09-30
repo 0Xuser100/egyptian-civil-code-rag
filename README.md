@@ -55,7 +55,7 @@ uv run pytest
 uv build
 ```
 
-`dvc` is an optional uv extra. This branch versions the source with `data/raw/egyption-low.pdf.dvc` and excludes the PDF and cache from Git. No shared DVC remote is configured. The simple `main` baseline includes the PDF, so the restore command above provides it until shared storage is chosen. The extracted JSON and Markdown remain committed review artifacts. After configuring a shared remote, use `uv sync --extra dvc --locked`, `uv run --extra dvc dvc pull`, `uv run --extra dvc dvc repro`, and `uv run --extra dvc dvc push`.
+`dvc` is an optional uv extra with S3 support. This branch versions the source with `data/raw/egyption-low.pdf.dvc` and excludes the PDF and cache from Git. The default DVC remote, `storage`, is an IDrive e2 bucket configured in `.dvc/config`. The extracted JSON and Markdown remain committed review artifacts; `dvc.lock` records their checksums. To use the remote, copy `.env.example` to `.env` and enter an IDrive access key for the bucket, then run `uv sync --extra dvc --locked`, `uv run --extra dvc --env-file .env dvc pull`, `uv run --extra dvc dvc repro`, and `uv run --extra dvc --env-file .env dvc push`. Without credentials, the restore command above still provides the PDF from `main`.
 
 ## Design and milestones
 

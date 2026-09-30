@@ -65,7 +65,7 @@ The first service is a modular monolith. The corpus has about 1,149 article iden
 ## Data and versioning
 
 - The source PDF and derived corpus are data artifacts, not Python source files. The intended course workflow is to version them with DVC and reproduce extraction/indexing with `dvc repro`.
-- The source PDF is excluded from Git. A DVC remote is intentionally not configured until a storage location and access method are chosen. The current JSON and Markdown exports are Git review artifacts so this branch can be inspected without DVC credentials.
+- The source PDF is excluded from Git and stored in the IDrive e2 DVC remote configured in `.dvc/config`; access keys stay in each contributor's Git-ignored `.env`. The current JSON and Markdown exports are Git review artifacts so this branch can be inspected without DVC credentials.
 - A corpus fingerprint is derived from the source checksum, extractor version, and normalization/schema version. Index records carry that fingerprint and the embedding model identifier.
 - Preserve repealed articles and mark them. Retrieval must not silently erase the evidence that a provision has been repealed.
 

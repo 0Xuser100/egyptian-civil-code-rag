@@ -11,16 +11,16 @@ stages:
       size: 2599703
     - path: pyproject.toml
       hash: md5
-      md5: 85c317da61594c33656796102a4ff95b
-      size: 684
+      md5: 87db15acbefd04744e7dda9717e593b9
+      size: 688
     - path: src/egyptian_civil_code_rag/extraction.py
       hash: md5
       md5: 0af60e8a907364ce07daf064bff4df2e
       size: 22260
     - path: uv.lock
       hash: md5
-      md5: c4e947b3aa21b98531e091e924cec1f0
-      size: 172053
+      md5: 8bbd8848e7a846f0158502af449d3565
+      size: 181149
     outs:
     - path: data/processed/egyptian_civil_code.json
       hash: md5

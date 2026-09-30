@@ -16,7 +16,7 @@ civil-code-extract = "egyptian_civil_code_rag.extraction:main"
 
 [project.optional-dependencies]
 dvc = [
-    "dvc>=3,<4",
+    "dvc[s3]>=3,<4",
 ]
 
 [build-system]
