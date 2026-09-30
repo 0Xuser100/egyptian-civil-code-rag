@@ -42,6 +42,17 @@ def test_article_numbers_and_handbook_fields_are_present() -> None:
     assert all(record["citation"] for record in records)
 
 
+# The longest source article (1143) has about 1,400 Arabic and 2,200 English
+# characters; a record beyond this bound means neighbouring articles were merged.
+MAX_ARTICLE_TEXT_CHARS = 3000
+
+
+def test_no_record_exceeds_a_single_article_length() -> None:
+    for record in load_corpus():
+        assert len(record["text_ar"]) <= MAX_ARTICLE_TEXT_CHARS, record["article_number"]
+        assert len(record["text_en"]) <= MAX_ARTICLE_TEXT_CHARS, record["article_number"]
+
+
 def test_repeal_detection_requires_an_explicit_statement() -> None:
     article_two = "Article 2\nA provision of a law can only be repealed by a later law."
     assert EN_SINGLE_REPEALED_RE.search(article_two) is None

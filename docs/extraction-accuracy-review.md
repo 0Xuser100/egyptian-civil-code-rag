@@ -45,5 +45,6 @@ This one short passage is a diagnostic example, not a corpus accuracy estimate. 
 
 - Article 1022 remains without extracted Arabic text. Pages 147-148 show highlighted Arabic text adjacent to English Article 1022 under the Article 1021 area; it was not reassigned.
 - Article 615 includes a glyph in the extracted text that needs close transcription review.
+- Lam-alef is extracted in reversed order, as "ال" instead of "لا" (Article 147 reads "فال يجوز" for "فلا يجوز"). The corpus has 574 reversed standalone tokens in 418 articles and no correct standalone "لا". Fix this before embedding Arabic text.
 - The 14 boundary checks do not validate every character of the 3,354 extracted Arabic characters.
 - Coverage (1,092/1,093 active records with Arabic text) is not transcription accuracy, translation accuracy, or RAG quality.
