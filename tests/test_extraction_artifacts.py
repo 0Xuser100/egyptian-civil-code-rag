@@ -57,6 +57,29 @@ def test_english_article_label_without_space_is_detected() -> None:
     assert detect_article("Article1022\nArticle body", "en") == 1022
 
 
+RECOVERED_ARABIC_ARTICLES = (
+    439, 543, 601, 615, 627, 652, 660, 703, 855, 966, 1005, 1088, 1092, 1118
+)
+
+
+def test_split_and_spaced_arabic_article_labels_are_detected() -> None:
+    # Label forms observed in the source text layer for the recovered articles.
+    cases = {
+        "ما دة\n٤٣٩\nنص المادة": 439,
+        "ماد ة\n٦٢٧\nنص المادة": 627,
+        "م ادة\n١٠٠٥\nنص المادة": 1005,
+        "مادة\n٦٠ ١\n(١) نص المادة": 601,
+    }
+    for text, expected in cases.items():
+        assert detect_article(text, "ar") == expected
+
+
+def test_split_arabic_label_parsing_stays_line_bound() -> None:
+    assert detect_article("ما\nدة\n٤٣٩\nنص المادة", "ar") is None
+    assert detect_article("مادة\n٦٠\n١ نص المادة", "ar") == 60
+    assert detect_article("مادة\n٦٠ ١ نص المادة", "ar") == 60
+
+
 def test_known_language_gap_and_repeal_ranges_are_visible() -> None:
     records = {record["article_number"]: record for record in load_corpus()}
 
@@ -67,9 +90,14 @@ def test_known_language_gap_and_repeal_ranges_are_visible() -> None:
         set(range(54, 81)) | set(range(389, 418))
     )
     assert all(record["text_en"] for record in records.values() if not record["is_repealed"])
-    assert {number for number, record in records.items() if "missing_ar" in record["flags"]} == {
-        439, 543, 601, 615, 627, 652, 660, 703, 855, 966, 1005, 1022, 1088, 1092, 1118
-    }
+    assert {
+        number for number, record in records.items() if "missing_ar" in record["flags"]
+    } == {1022}
+    # Article 601's spaced label was previously read as repealed Article 60.
+    assert not records[60]["text_ar"]
+    for number in RECOVERED_ARABIC_ARTICLES:
+        assert detect_article(records[number]["text_ar"], "ar") == number
+        assert "missing_ar" not in records[number]["flags"]
 
     article_1022 = records[1022]
     assert article_1022["source_page"] == 147

@@ -7,7 +7,7 @@ For extraction changes, supply `data/raw/egyption-low.pdf` locally or pull it fr
 Before submitting, run:
 
 ```sh
-uv run --locked ruff check src tests
+uv run --locked ruff check src tests scripts
 uv run --locked pytest -q
 uv build
 ```

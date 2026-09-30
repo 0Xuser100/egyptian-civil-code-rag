@@ -5,7 +5,7 @@ The current branch implements reproducible extraction and records the intended R
 | Increment | Deliverables | Acceptance evidence |
 |---|---|---|
 | 1. Extraction experiment (current) | Locked uv package, PyMuPDF cell extraction, JSON/Markdown, DVC pipeline, focused tests, HLD/LLD | All 1,149 Code IDs; correct explicit repeal ranges; known language gaps preserved; lint/tests/package build pass |
-| 2. Corpus approval | 20 random visual comparisons; review the 15 Arabic gaps and hierarchy; source provenance; shared DVC remote | Signed review checklist and versioned reviewed corpus; unresolved gaps have an explicit exclusion or handling policy |
+| 2. Corpus approval | 20 random visual comparisons; review the 14 recovered Arabic articles and the Article 1022 gap and hierarchy; source provenance; shared DVC remote | Signed review checklist and versioned reviewed corpus; unresolved gaps have an explicit exclusion or handling policy |
 | 3. Retrieval baseline | Validated article schema, language-specific article/paragraph chunks, multilingual embeddings, pgvector index CLI | Deterministic IDs; reproducible index; retrieval cases in both languages; model/index mismatch blocks readiness |
 | 4. Query service | FastAPI `POST /ask`, `GET /health`, generation adapter, citations, abstention, bounded timeouts | Empty question returns 422; answers cite retrieved articles; known unsupported questions abstain; Docker/Compose smoke check |
 | 5. Experiments | 50+ reviewed bilingual questions; fixed 20-question CI subset; separate human-labeled judge calibration set; five MLflow runs | RAGAS report with language breakdown and selected configuration; stable CI faithfulness at least 0.75 |

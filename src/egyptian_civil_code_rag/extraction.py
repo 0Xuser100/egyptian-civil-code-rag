@@ -27,6 +27,13 @@ DIACRITICS_RE = re.compile(r"[\u064b-\u0652\u0670]")
 TATWEEL = "\u0640"
 
 EN_ARTICLE_RE = re.compile(r"^\s*(?:A?rticle|Art\.)\s*(\d{1,4})\b", re.IGNORECASE)
+# PDF text extraction splits some Arabic labels with one space inside the word
+# (for example, "ما دة" for 439) or inside the number ("٦٠ ١" for 601). Accept
+# those splits only when the label word and the 1-4 digit number each fill a line.
+AR_SPLIT_ARTICLE_RE = re.compile(
+    r"^\s*م[ \t]?ا[ \t]?د[ \t]?ة[ \t]*\n[ \t]*"
+    r"([٠-٩۰-۹](?:[ \t]?[٠-٩۰-۹]){0,3})[ \t]*(?:\n|$)"
+)
 EN_RANGE_RE = re.compile(
     r"\bArticles?\s+(\d{1,4})\s*(?:-|–|—|to)\s*(\d{1,4})"
     r"[\s\S]{0,160}?\brepealed\b",
@@ -145,36 +152,10 @@ def detect_article(text: str, language: str) -> int | None:
     if language == "en":
         match = EN_ARTICLE_RE.match(text)
         return int(match.group(1)) if match else None
-    #### ##### edit start-------------------------------------------------------------
-   # Handles split Arabic article markers such as:
-    # "ماد ة\n٦٢٧" or "ما دة\n٤٣٩"
-    """
-    split_marker = re.match(
-        r"^\s*م\s*ا\s*د\s*ة\s*[\r\n\s]*([٠-٩۰-۹]+)",
-        text[:100],
-    )
-    if split_marker:
-        number = normalize_digits(split_marker.group(1))
-        return int(number)
 
-    """
-    # Handles spaces inside the Arabic article number:
-    # "مادة\n٦٠ ١" -> 601 
-
-    spaced_marker = re.match(
-    r"^\s*م\s*ا\s*د\s*ة\s*[\r\n\s]*([٠-٩۰-۹]+(?:\s+[٠-٩۰-۹]+)*)",
-    text[:100],
-    )
-    if spaced_marker:
-       number = spaced_marker.group(1).replace(" ", "")
-       number = normalize_digits(number)
-       return int(number)
-
-   
-
-
-    ########## end -------------------------------------------------------------------
-
+    split_match = AR_SPLIT_ARTICLE_RE.match(text)
+    if split_match:
+        return int(normalize_digits(re.sub(r"[ \t]", "", split_match.group(1))))
     normalized = normalize_digits(text)
     prefix = re.sub(r"^[\s(\[{]+", "", normalized[:100])
     # The source labels Arabic provisions with the article word; accepting either

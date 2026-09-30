@@ -45,12 +45,12 @@ The command writes `data/processed/egyptian_civil_code.json` and `data/processed
 
 The JSON is one record per article in an array. It contains the handbook fields (`article_number`, `book`, `chapter`, `section`, `topic`, `text_ar`, `text_en`, `is_repealed`, `source_page`, and `citation`) plus identifiers, scope, source-page continuation data, hierarchy, normalized Arabic search text, repeal details, and review flags. These additions preserve provenance and make later indexing safer.
 
-Extraction is not yet approved as a final corpus. The corrected output contains all 1,149 Code article numbers and 56 explicitly repealed records. `docs/extraction-review.md` explains the repaired Article 2 repeal flag, Article 452 label, Article 1022 numbering detection, and 15 Arabic-text gaps that need review before indexing. English coverage is complete for the 1,093 non-repealed records; Arabic coverage is 98.6%. These rates are not transcription accuracy.
+Extraction is not yet approved as a final corpus. The regenerated output contains all 1,149 Code article numbers and 56 explicitly repealed records. English text is present for all 1,093 non-repealed records; Arabic text is present for 1,092 (99.91%), with Article 1022 still flagged for review. These are coverage rates, not transcription accuracy. See `docs/extraction-review.md`, `docs/extraction-accuracy-review.md`, and `docs/corpus-review-checklist.md` before indexing.
 
 ## Development
 
 ```powershell
-uv run ruff check src tests
+uv run ruff check src tests scripts
 uv run pytest
 uv build
 ```
