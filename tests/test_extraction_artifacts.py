@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from egyptian_civil_code_rag.extraction import (
     EN_RANGE_RE,
     EN_SINGLE_REPEALED_RE,
@@ -74,22 +76,37 @@ RECOVERED_ARABIC_ARTICLES = (
 )
 
 
-def test_split_and_spaced_arabic_article_labels_are_detected() -> None:
-    # Label forms observed in the source text layer for the recovered articles.
-    cases = {
-        "ما دة\n٤٣٩\nنص المادة": 439,
-        "ماد ة\n٦٢٧\nنص المادة": 627,
-        "م ادة\n١٠٠٥\nنص المادة": 1005,
-        "مادة\n٦٠ ١\n(١) نص المادة": 601,
-    }
-    for text, expected in cases.items():
-        assert detect_article(text, "ar") == expected
+# Label forms observed in the source text layer for the recovered articles.
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("ما دة\n٤٣٩\nنص المادة", 439),
+        ("ماد ة\n٦٢٧\nنص المادة", 627),
+        ("م ادة\n١٠٠٥\nنص المادة", 1005),
+        ("مادة\n٦٠ ١\n(١) نص المادة", 601),
+    ],
+)
+def test_split_arabic_label_on_its_own_lines_is_detected(text: str, expected: int) -> None:
+    assert detect_article(text, "ar") == expected
 
 
-def test_split_arabic_label_parsing_stays_line_bound() -> None:
-    assert detect_article("ما\nدة\n٤٣٩\nنص المادة", "ar") is None
-    assert detect_article("مادة\n٦٠\n١ نص المادة", "ar") == 60
-    assert detect_article("مادة\n٦٠ ١ نص المادة", "ar") == 60
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("ما\nدة\n٤٣٩\nنص المادة", None),
+        ("مادة\n٦٠\n١ نص المادة", 60),
+        ("مادة\n٦٠ ١ نص المادة", 60),
+    ],
+)
+def test_split_label_is_joined_only_within_its_own_lines(text: str, expected: int | None) -> None:
+    assert detect_article(text, "ar") == expected
+
+
+@pytest.mark.parametrize("number", RECOVERED_ARABIC_ARTICLES)
+def test_recovered_arabic_article_starts_with_its_own_label(number: int) -> None:
+    record = next(r for r in load_corpus() if r["article_number"] == number)
+    assert detect_article(record["text_ar"], "ar") == number
+    assert "missing_ar" not in record["flags"]
 
 
 def test_known_language_gap_and_repeal_ranges_are_visible() -> None:
@@ -107,9 +124,6 @@ def test_known_language_gap_and_repeal_ranges_are_visible() -> None:
     } == {1022}
     # Article 601's spaced label was previously read as repealed Article 60.
     assert not records[60]["text_ar"]
-    for number in RECOVERED_ARABIC_ARTICLES:
-        assert detect_article(records[number]["text_ar"], "ar") == number
-        assert "missing_ar" not in records[number]["flags"]
 
     article_1022 = records[1022]
     assert article_1022["source_page"] == 147
@@ -123,18 +137,36 @@ def test_clipped_english_article_label_is_normalized() -> None:
     assert records[452]["text_en"].startswith("Article 452")
 
 
-def test_lam_alef_ligature_order_is_restored() -> None:
-    # Glyph geometry observed on source page 16: the ligature's alef is zero-width
-    # at lam's right edge, while a real definite-article alef has its own width.
-    fa = {"c": "ف", "bbox": (435.74, 0, 440.0, 10)}
-    ligature_alef = {"c": "ا", "bbox": (435.74, 0, 435.74, 10)}
-    ligature_lam = {"c": "ل", "bbox": (429.10, 0, 435.74, 10)}
-    assert line_text([fa, ligature_alef, ligature_lam]) == "فلا"
+# Glyph geometry observed on source page 16: the ligature's alef is zero-width
+# at lam's right edge, while a real definite-article alef has its own width.
+@pytest.mark.parametrize(
+    ("chars", "expected"),
+    [
+        (
+            [
+                {"c": "ف", "bbox": (435.74, 0, 440.0, 10)},
+                {"c": "ا", "bbox": (435.74, 0, 435.74, 10)},
+                {"c": "ل", "bbox": (429.10, 0, 435.74, 10)},
+            ],
+            "فلا",
+        ),
+        (
+            [
+                {"c": "ا", "bbox": (435.0, 0, 438.0, 10)},
+                {"c": "ل", "bbox": (431.0, 0, 435.0, 10)},
+            ],
+            "ال",
+        ),
+    ],
+    ids=["ligature-is-reordered", "definite-article-is-kept"],
+)
+def test_lam_alef_order_follows_glyph_geometry(
+    chars: list[dict[str, object]], expected: str
+) -> None:
+    assert line_text(chars) == expected
 
-    article_alef = {"c": "ا", "bbox": (435.0, 0, 438.0, 10)}
-    article_lam = {"c": "ل", "bbox": (431.0, 0, 435.0, 10)}
-    assert line_text([article_alef, article_lam]) == "ال"
 
+def test_corpus_text_and_headings_keep_restored_lam_alef() -> None:
     records = {record["article_number"]: record for record in load_corpus()}
     assert "فلا يجوز نقضه ولا تعديله إلا" in records[147]["text_ar"]
     assert records[1]["hierarchy_ar"]["section"] == "الفصل الأول"

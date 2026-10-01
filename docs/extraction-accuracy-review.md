@@ -46,5 +46,5 @@ This one short passage is a diagnostic example, not a corpus accuracy estimate. 
 - Article 1022 remains without extracted Arabic text. Pages 147-148 show highlighted Arabic text adjacent to English Article 1022 under the Article 1021 area; it was not reassigned.
 - Article 615 includes a glyph in the extracted text that needs close transcription review.
 - Lam-alef order is restored. The source font maps each lam-alef ligature to lam plus a zero-width alef at lam's right edge, and PyMuPDF returned that alef first, so Article 147 read "فال يجوز" instead of "فلا يجوز". The extractor now reorders these pairs by glyph geometry: 3,458 pairs in 954 Arabic records, plus the Arabic heading path. Stray zero-width alef and private-use glyphs clipped at cell edges are no longer emitted. About 29 standalone "ال" tokens remain where the source spaces the definite article apart from its word (for example "ال دائنين"); that is a separate word-spacing issue.
-- The 14 boundary checks do not validate every character of the 3,354 extracted Arabic characters.
+- The 14 boundary checks do not validate every character of the 3,352 Arabic characters extracted for these articles.
 - Coverage (1,092/1,093 active records with Arabic text) is not transcription accuracy, translation accuracy, or RAG quality.
