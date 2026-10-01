@@ -22,7 +22,8 @@ Repository name: `egyptian-civil-code-rag`.
 |-- src/egyptian_civil_code_rag/
 |   `-- extraction.py
 |-- scripts/
-|   `-- extract_egyptian_civil_code.py  # Thin entry point to the package
+|   |-- extract_egyptian_civil_code.py  # Thin entry point to the package
+|   `-- profile_corpus.py               # Corpus profiling report
 |-- tests/
 |-- .dvc/config              # DVC remote settings; no credentials
 |-- .env.example             # Placeholder DVC credentials; copy to the Git-ignored .env

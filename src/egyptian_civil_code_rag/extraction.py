@@ -25,6 +25,7 @@ ARABIC_DIGITS = str.maketrans("٠١٢٣٤٥٦٧٨٩۰۱۲۳۴۵۶۷۸۹", "01234
 ARABIC_DIGIT_RUN_RE = re.compile(r"[\u0660-\u0669\u06f0-\u06f9]+")
 DIACRITICS_RE = re.compile(r"[\u064b-\u0652\u0670]")
 TATWEEL = "\u0640"
+GLYPH_EDGE_TOLERANCE = 0.01  # PDF points; absorbs float rounding in glyph boxes
 LAM = "\u0644"
 LAM_ALEF_TAILS = "\u0627\u0623\u0625\u0622"  # ا أ إ آ
 
@@ -143,8 +144,8 @@ def line_text(chars: list[dict[str, Any]]) -> str:
             following is not None
             and char["c"] in LAM_ALEF_TAILS
             and following["c"] == LAM
-            and char["bbox"][0] == char["bbox"][2]
-            and abs(following["bbox"][2] - char["bbox"][0]) < 0.01
+            and char["bbox"][2] - char["bbox"][0] < GLYPH_EDGE_TOLERANCE
+            and abs(following["bbox"][2] - char["bbox"][0]) < GLYPH_EDGE_TOLERANCE
         ):
             text += [LAM, char["c"]]
             index += 2

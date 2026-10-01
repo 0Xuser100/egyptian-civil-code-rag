@@ -15,8 +15,8 @@ stages:
       size: 688
     - path: src/egyptian_civil_code_rag/extraction.py
       hash: md5
-      md5: b33771ed57069cefecd1901413e01791
-      size: 23535
+      md5: 90e83ddd6f41cffa2510d58be43706f6
+      size: 23654
     - path: uv.lock
       hash: md5
       md5: 8bbd8848e7a846f0158502af449d3565
