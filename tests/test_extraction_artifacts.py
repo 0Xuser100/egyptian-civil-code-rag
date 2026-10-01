@@ -1,0 +1,177 @@
+import json
+from pathlib import Path
+
+import pytest
+
+from egyptian_civil_code_rag.extraction import (
+    EN_RANGE_RE,
+    EN_SINGLE_REPEALED_RE,
+    detect_article,
+    line_text,
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+CORPUS_PATH = ROOT / "data" / "processed" / "egyptian_civil_code.json"
+
+
+def load_corpus() -> list[dict[str, object]]:
+    return json.loads(CORPUS_PATH.read_text(encoding="utf-8"))
+
+
+def test_article_numbers_and_handbook_fields_are_present() -> None:
+    records = load_corpus()
+    numbers = [record["article_number"] for record in records]
+    assert numbers == list(range(1, 1150))
+
+    required = {
+        "article_number",
+        "book",
+        "chapter",
+        "section",
+        "topic",
+        "text_ar",
+        "text_en",
+        "is_repealed",
+        "source_page",
+        "citation",
+    }
+    assert all(required <= record.keys() for record in records)
+    assert all(record["scope"] == "code" for record in records)
+    assert all(type(record["article_number"]) is int for record in records)
+    assert all(type(record["is_repealed"]) is bool for record in records)
+    assert all(type(record["source_page"]) is int for record in records)
+    assert all(isinstance(record["text_ar"], str) for record in records)
+    assert all(isinstance(record["text_en"], str) for record in records)
+    assert all(record["citation"] for record in records)
+
+
+# The longest source article (1143) has about 1,400 Arabic and 2,200 English
+# characters; a record beyond this bound means neighbouring articles were merged.
+MAX_ARTICLE_TEXT_CHARS = 3000
+
+
+def test_no_record_exceeds_a_single_article_length() -> None:
+    for record in load_corpus():
+        assert len(record["text_ar"]) <= MAX_ARTICLE_TEXT_CHARS, record["article_number"]
+        assert len(record["text_en"]) <= MAX_ARTICLE_TEXT_CHARS, record["article_number"]
+
+
+def test_repeal_detection_requires_an_explicit_statement() -> None:
+    article_two = "Article 2\nA provision of a law can only be repealed by a later law."
+    assert EN_SINGLE_REPEALED_RE.search(article_two) is None
+
+    explicit = "Article 123 is repealed by Decree No. 1."
+    assert EN_SINGLE_REPEALED_RE.search(explicit)
+
+    range_note = "Articles 54-80 have been repealed by Presidential Decree."
+    assert EN_RANGE_RE.search(range_note)
+
+
+def test_english_article_label_without_space_is_detected() -> None:
+    assert detect_article("Article1022\nArticle body", "en") == 1022
+
+
+RECOVERED_ARABIC_ARTICLES = (
+    439, 543, 601, 615, 627, 652, 660, 703, 855, 966, 1005, 1088, 1092, 1118
+)
+
+
+# Label forms observed in the source text layer for the recovered articles.
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("ما دة\n٤٣٩\nنص المادة", 439),
+        ("ماد ة\n٦٢٧\nنص المادة", 627),
+        ("م ادة\n١٠٠٥\nنص المادة", 1005),
+        ("مادة\n٦٠ ١\n(١) نص المادة", 601),
+    ],
+)
+def test_split_arabic_label_on_its_own_lines_is_detected(text: str, expected: int) -> None:
+    assert detect_article(text, "ar") == expected
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("ما\nدة\n٤٣٩\nنص المادة", None),
+        ("مادة\n٦٠\n١ نص المادة", 60),
+        ("مادة\n٦٠ ١ نص المادة", 60),
+    ],
+)
+def test_split_label_is_joined_only_within_its_own_lines(text: str, expected: int | None) -> None:
+    assert detect_article(text, "ar") == expected
+
+
+@pytest.mark.parametrize("number", RECOVERED_ARABIC_ARTICLES)
+def test_recovered_arabic_article_starts_with_its_own_label(number: int) -> None:
+    record = next(r for r in load_corpus() if r["article_number"] == number)
+    assert detect_article(record["text_ar"], "ar") == number
+    assert "missing_ar" not in record["flags"]
+
+
+def test_known_language_gap_and_repeal_ranges_are_visible() -> None:
+    records = {record["article_number"]: record for record in load_corpus()}
+
+    assert records[2]["is_repealed"] is False
+    assert all(records[number]["is_repealed"] for number in range(54, 81))
+    assert all(records[number]["is_repealed"] for number in range(389, 418))
+    assert {number for number, record in records.items() if record["is_repealed"]} == (
+        set(range(54, 81)) | set(range(389, 418))
+    )
+    assert all(record["text_en"] for record in records.values() if not record["is_repealed"])
+    assert {
+        number for number, record in records.items() if "missing_ar" in record["flags"]
+    } == {1022}
+    # Article 601's spaced label was previously read as repealed Article 60.
+    assert not records[60]["text_ar"]
+
+    article_1022 = records[1022]
+    assert article_1022["source_page"] == 147
+    assert "missing_ar" in article_1022["flags"]
+    assert "missing_en" not in article_1022["flags"]
+    assert "number_gap_in_source" not in article_1022["flags"]
+
+
+def test_clipped_english_article_label_is_normalized() -> None:
+    records = {record["article_number"]: record for record in load_corpus()}
+    assert records[452]["text_en"].startswith("Article 452")
+
+
+# Glyph geometry observed on source page 16: the ligature's alef is zero-width
+# at lam's right edge, while a real definite-article alef has its own width.
+@pytest.mark.parametrize(
+    ("chars", "expected"),
+    [
+        (
+            [
+                {"c": "ف", "bbox": (435.74, 0, 440.0, 10)},
+                {"c": "ا", "bbox": (435.74, 0, 435.74, 10)},
+                {"c": "ل", "bbox": (429.10, 0, 435.74, 10)},
+            ],
+            "فلا",
+        ),
+        (
+            [
+                {"c": "ا", "bbox": (435.0, 0, 438.0, 10)},
+                {"c": "ل", "bbox": (431.0, 0, 435.0, 10)},
+            ],
+            "ال",
+        ),
+    ],
+    ids=["ligature-is-reordered", "definite-article-is-kept"],
+)
+def test_lam_alef_order_follows_glyph_geometry(
+    chars: list[dict[str, object]], expected: str
+) -> None:
+    assert line_text(chars) == expected
+
+
+def test_corpus_text_and_headings_keep_restored_lam_alef() -> None:
+    records = {record["article_number"]: record for record in load_corpus()}
+    assert "فلا يجوز نقضه ولا تعديله إلا" in records[147]["text_ar"]
+    assert records[1]["hierarchy_ar"]["section"] == "الفصل الأول"
+
+
+def test_numbered_topic_heading_is_captured() -> None:
+    records = {record["article_number"]: record for record in load_corpus()}
+    assert records[147]["topic"] == "2. The Effects of a Contract"

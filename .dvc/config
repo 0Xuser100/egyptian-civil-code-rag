@@ -1,0 +1,7 @@
+[core]
+    no_scm = False
+    remote = storage
+['remote "storage"']
+    url = s3://egyptian-civil-code-rag-data/egyptian-civil-code-rag
+    endpointurl = https://s3.us-west-2.idrivee2.com
+    region = us-west-2

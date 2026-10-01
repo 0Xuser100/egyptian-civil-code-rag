@@ -1,0 +1,32 @@
+schema: '2.0'
+stages:
+  extract_corpus:
+    cmd: uv run --locked civil-code-extract data/raw/egyption-low.pdf --json 
+      data/processed/egyptian_civil_code.json --markdown 
+      data/processed/egyptian_civil_code.md
+    deps:
+    - path: data/raw/egyption-low.pdf
+      hash: md5
+      md5: 5086ef5f16f15d856278db943e58e948
+      size: 2599703
+    - path: pyproject.toml
+      hash: md5
+      md5: 87db15acbefd04744e7dda9717e593b9
+      size: 688
+    - path: src/egyptian_civil_code_rag/extraction.py
+      hash: md5
+      md5: 90e83ddd6f41cffa2510d58be43706f6
+      size: 23654
+    - path: uv.lock
+      hash: md5
+      md5: 8bbd8848e7a846f0158502af449d3565
+      size: 181149
+    outs:
+    - path: data/processed/egyptian_civil_code.json
+      hash: md5
+      md5: aa99eba572a38dd6b535b63b925890ac
+      size: 2352329
+    - path: data/processed/egyptian_civil_code.md
+      hash: md5
+      md5: bc71224a427dc2bdadba80c0fe2efe1f
+      size: 1085299
