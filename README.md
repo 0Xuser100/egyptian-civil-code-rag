@@ -37,11 +37,11 @@ The package is initialized and locked with `uv`. `pyproject.toml` defines Python
 
 ```powershell
 uv sync --locked
-git restore --source origin/main --worktree -- data/raw/egyption-low.pdf
+git restore --source 279ef32f4e9c --worktree -- data/raw/egyption-low.pdf
 uv run civil-code-extract
 ```
 
-The source restore command works on Windows, macOS, and Linux. Alternatively, supply your own copy at `data/raw/egyption-low.pdf`.
+The restore command needs no DVC credentials: it copies the PDF from commit `279ef32f4e9c`, the last baseline commit that stored it in Git, and works on Windows, macOS, and Linux. Alternatively, supply your own copy at `data/raw/egyption-low.pdf`.
 
 The command writes `data/processed/egyptian_civil_code.json` and `data/processed/egyptian_civil_code.md`. Reference PDFs live in `assets/`; there are no top-level duplicate artifacts. `uv run --locked python scripts/extract_egyptian_civil_code.py` invokes the same packaged implementation as `civil-code-extract`.
 
@@ -87,7 +87,7 @@ uv run --extra dvc dvc repro                  # rebuild the corpus; "up to date"
 
 **Go back to an earlier version.** Run `git checkout <commit>` and then `uv run --extra dvc --env-file .env dvc pull`.
 
-`uv run --extra dvc dvc status` checks the workspace against `dvc.lock`, and `uv run --extra dvc --env-file .env dvc status -c` compares the local cache with the bucket. Without credentials, the restore command above still provides the PDF from `main`.
+`uv run --extra dvc dvc status` checks the workspace against `dvc.lock`, and `uv run --extra dvc --env-file .env dvc status -c` compares the local cache with the bucket. Without credentials, the restore command above still provides the PDF from Git history.
 
 ## Design and milestones
 

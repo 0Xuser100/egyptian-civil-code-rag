@@ -28,4 +28,4 @@ Local Compose will expose the API on port 8000 and pgvector on port 5432 for dev
 5. Measure failures, latency, and sampled evaluation against the release baseline; promote or roll back.
 6. Keep the previous image and index available until the release is accepted; back up the database and shared DVC storage.
 
-The extraction branch can be reviewed without deploying services. The private GitHub repository is published. Main contains the simple structured dataset, assets, standalone extractor, and processed outputs; this branch adds the packaged experiment, DVC workflow, tests, CI, and architecture documents.
+The extraction branch can be reviewed without deploying services. The private GitHub repository is published. `main` receives reviewed releases of `project2/rag-foundation`. The packaged extractor, DVC workflow, tests, CI, and architecture documents replaced the earlier standalone baseline, which remains in Git history at commit `279ef32f4e9c`.

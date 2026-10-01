@@ -30,7 +30,7 @@ The "Data versioning with DVC" section of the README explains where each file is
 
 ## Branches
 
-- `main` is the simple baseline. It changes only through reviewed pull requests.
+- `main` holds reviewed releases. It changes only through pull requests from `project2/rag-foundation`.
 - `project2/rag-foundation` is the integration branch for Project 2. Open pull requests into it.
 - Every change gets its own short-lived branch, for example `fix/article-1022` or `feat/chunking`.
 
