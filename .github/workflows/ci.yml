@@ -21,7 +21,7 @@ jobs:
       - name: Install locked environment
         run: uv sync --locked
       - name: Lint
-        run: uv run ruff check src tests
+        run: uv run ruff check src tests scripts
       - name: Validate extraction contract
         run: uv run pytest -q
       - name: Build package

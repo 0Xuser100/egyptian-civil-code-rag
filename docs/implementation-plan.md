@@ -4,8 +4,8 @@ The current branch implements reproducible extraction and records the intended R
 
 | Increment | Deliverables | Acceptance evidence |
 |---|---|---|
-| 1. Extraction experiment (current) | Locked uv package, PyMuPDF cell extraction, JSON/Markdown, DVC pipeline, focused tests, HLD/LLD | All 1,149 Code IDs; correct explicit repeal ranges; known language gaps preserved; lint/tests/package build pass |
-| 2. Corpus approval | 20 random visual comparisons; review the 15 Arabic gaps and hierarchy; source provenance; shared DVC remote | Signed review checklist and versioned reviewed corpus; unresolved gaps have an explicit exclusion or handling policy |
+| 1. Extraction experiment (current) | Locked uv package, PyMuPDF cell extraction, JSON/Markdown, DVC pipeline with the shared IDrive e2 remote, focused tests, HLD/LLD | All 1,149 Code IDs; correct explicit repeal ranges; known language gaps preserved; lint/tests/package build pass |
+| 2. Corpus approval | 20 random visual comparisons; review the 14 recovered Arabic articles, the restored lam-alef text, the Article 1022 gap, and hierarchy; source provenance | Signed review checklist and versioned reviewed corpus; unresolved gaps have an explicit exclusion or handling policy |
 | 3. Retrieval baseline | Validated article schema, language-specific article/paragraph chunks, multilingual embeddings, pgvector index CLI | Deterministic IDs; reproducible index; retrieval cases in both languages; model/index mismatch blocks readiness |
 | 4. Query service | FastAPI `POST /ask`, `GET /health`, generation adapter, citations, abstention, bounded timeouts | Empty question returns 422; answers cite retrieved articles; known unsupported questions abstain; Docker/Compose smoke check |
 | 5. Experiments | 50+ reviewed bilingual questions; fixed 20-question CI subset; separate human-labeled judge calibration set; five MLflow runs | RAGAS report with language breakdown and selected configuration; stable CI faithfulness at least 0.75 |
@@ -15,7 +15,7 @@ The current branch implements reproducible extraction and records the intended R
 
 ## Configuration to introduce with the API milestone
 
-Use environment-backed settings for `DATABASE_URL`, LLM credentials/model, embedding model/revision, active corpus version, retrieval candidate count, context budget, timeouts, and tracing credentials. Commit an `.env.example` with placeholders only when those settings exist in code. Avoid installing or creating service scaffolding before implementing the relevant increment.
+Use environment-backed settings for `DATABASE_URL`, LLM credentials/model, embedding model/revision, active corpus version, retrieval candidate count, context budget, timeouts, and tracing credentials. `.env.example` currently holds only the DVC remote credentials; add other placeholders only when those settings exist in code. Avoid installing or creating service scaffolding before implementing the relevant increment.
 
 Local Compose will expose the API on port 8000 and pgvector on port 5432 for development. In deployment, keep the database private, inject secrets at runtime, and expose only the HTTPS ingress. The first release uses an external LLM API; the later vLLM service needs a measured GPU capacity plan.
 

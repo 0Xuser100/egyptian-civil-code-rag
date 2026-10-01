@@ -133,7 +133,7 @@ Create a unique constraint on `(corpus_version, article_number, language, chunk_
 
 ## Extraction and corpus validation
 
-The current parser uses `page.find_tables(strategy="lines")` and extracts each cell with `page.get_text("text", clip=cell)`. It classifies language per cell and maintains independent English and Arabic article cursors so continuation rows do not shift the bilingual columns. It normalizes Unicode, restores Arabic-Indic digit runs when the PDF text layer reverses them, captures headings, and records page provenance.
+The current parser uses `page.find_tables(strategy="lines")` and extracts each cell's characters with `page.get_text("rawdict", clip=cell)`. It classifies language per cell and maintains independent English and Arabic article cursors so continuation rows do not shift the bilingual columns. It normalizes Unicode, restores Arabic-Indic digit runs when the PDF text layer reverses them, restores lam-alef ligature order from glyph geometry, captures headings, and records page provenance.
 
 Before indexing, validate:
 
@@ -144,7 +144,7 @@ Before indexing, validate:
 - citations match article numbers and source page references exist;
 - Arabic text is spot-checked visually, including randomized articles and known extraction edge cases.
 
-The printed English label `Article1022` has no space. The corrected parser recognizes it on PDF page 147 and includes its continuation on page 148, eliminating the false numbering gap. Its Arabic cell is blank; Arabic paragraphs under Article 1021 must not be reassigned without legal review. There are 15 non-repealed records without extracted Arabic text. Keep those records flagged and complete the handbook's 20-article visual spot-check before approving the corpus for embeddings. Coverage measures do not establish transcription accuracy.
+The printed English label `Article1022` has no space. The corrected parser recognizes it on PDF page 147 and includes its continuation on page 148, eliminating the false numbering gap. Its Arabic cell is blank; Arabic paragraphs under Article 1021 must not be reassigned without legal review. Article 1022 is the only non-repealed record without extracted Arabic text; the other 14 earlier gaps were split Arabic labels and are recovered. Keep Article 1022 flagged and complete the handbook's 20-article visual spot-check before approving the corpus for embeddings. Coverage measures do not establish transcription accuracy.
 
 ## Experiment and evaluation contracts
 
@@ -166,6 +166,7 @@ Promote the image, corpus fingerprint, embedding model, and generation model as 
 ## Runtime and release boundaries
 
 - Local: `uv sync --locked`; Docker Compose will run API and pgvector once the API slice exists.
+- Data: `dvc pull` restores the source PDF from the IDrive e2 remote `storage` using credentials from the Git-ignored `.env`, and `dvc repro` rebuilds the corpus against `dvc.lock`. A later indexing stage belongs in the same `dvc.yaml`.
 - CI: lockfile install, Ruff, pytest, corpus schema checks, package/container build, and later the RAGAS gate.
 - Release: build an immutable image, tag it with the code revision, and record the corpus fingerprint and model identifiers. Re-index and validate before switching the active corpus.
 - Production: API container behind HTTPS ingress, managed PostgreSQL/pgvector, durable backups, and secrets supplied by the deployment platform. The LLM provider is external in the first release. The later offline course stage uses BentoML and vLLM/AWQ.

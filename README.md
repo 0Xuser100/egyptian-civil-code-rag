@@ -12,7 +12,7 @@ Repository name: `egyptian-civil-code-rag`.
 .
 |-- assets/                  # Extraction report and course handbook PDFs
 |-- data/
-|   |-- raw/                 # Local source PDF; excluded from Git
+|   |-- raw/                 # Source PDF from the DVC remote; Git holds only its .dvc pointer
 |   `-- processed/           # Article JSON and readable Markdown review
 |-- docs/
 |   |-- architecture/
@@ -22,11 +22,15 @@ Repository name: `egyptian-civil-code-rag`.
 |-- src/egyptian_civil_code_rag/
 |   `-- extraction.py
 |-- scripts/
-|   `-- extract_egyptian_civil_code.py  # Thin entry point to the package
+|   |-- extract_egyptian_civil_code.py  # Thin entry point to the package
+|   `-- profile_corpus.py               # Corpus profiling report
 |-- tests/
+|-- .dvc/config              # DVC remote settings; no credentials
+|-- .env.example             # Placeholder DVC credentials; copy to the Git-ignored .env
 |-- pyproject.toml
 |-- uv.lock
-`-- dvc.yaml
+|-- dvc.yaml                 # Pipeline: PDF -> JSON and Markdown
+`-- dvc.lock                 # Checksums of the pipeline inputs and outputs
 ```
 
 The package is initialized and locked with `uv`. `pyproject.toml` defines Python and dependencies; `uv.lock` fixes the resolved versions. Start from a fresh clone with these three steps:
@@ -45,17 +49,45 @@ The command writes `data/processed/egyptian_civil_code.json` and `data/processed
 
 The JSON is one record per article in an array. It contains the handbook fields (`article_number`, `book`, `chapter`, `section`, `topic`, `text_ar`, `text_en`, `is_repealed`, `source_page`, and `citation`) plus identifiers, scope, source-page continuation data, hierarchy, normalized Arabic search text, repeal details, and review flags. These additions preserve provenance and make later indexing safer.
 
-Extraction is not yet approved as a final corpus. The corrected output contains all 1,149 Code article numbers and 56 explicitly repealed records. `docs/extraction-review.md` explains the repaired Article 2 repeal flag, Article 452 label, Article 1022 numbering detection, and 15 Arabic-text gaps that need review before indexing. English coverage is complete for the 1,093 non-repealed records; Arabic coverage is 98.6%. These rates are not transcription accuracy.
+Extraction is not yet approved as a final corpus. The regenerated output contains all 1,149 Code article numbers and 56 explicitly repealed records. English text is present for all 1,093 non-repealed records; Arabic text is present for 1,092 (99.91%), with Article 1022 still flagged for review. These are coverage rates, not transcription accuracy. See `docs/extraction-review.md`, `docs/extraction-accuracy-review.md`, and `docs/corpus-review-checklist.md` before indexing.
 
 ## Development
 
 ```powershell
-uv run ruff check src tests
+uv run ruff check src tests scripts
 uv run pytest
 uv build
 ```
 
-`dvc` is an optional uv extra. This branch versions the source with `data/raw/egyption-low.pdf.dvc` and excludes the PDF and cache from Git. No shared DVC remote is configured. The simple `main` baseline includes the PDF, so the restore command above provides it until shared storage is chosen. The extracted JSON and Markdown remain committed review artifacts. After configuring a shared remote, use `uv sync --extra dvc --locked`, `uv run --extra dvc dvc pull`, `uv run --extra dvc dvc repro`, and `uv run --extra dvc dvc push`.
+## Data versioning with DVC
+
+`dvc` is an optional uv extra with S3 support. Git stores code and small pointer files; DVC stores the source PDF in a bucket and records the checksums that tie data to each commit.
+
+| Data | Stored in | How to get it |
+|---|---|---|
+| Source PDF `data/raw/egyption-low.pdf` | DVC remote `storage`; Git holds `data/raw/egyption-low.pdf.dvc` | `dvc pull` |
+| Corpus `data/processed/*.json` and `*.md` | Git, as committed review artifacts; `dvc.lock` records their checksums (`cache: false`) | `git clone` or `git checkout` |
+| Pipeline | `dvc.yaml` stage `extract_corpus`; `dvc.lock` pins its inputs and outputs | `dvc repro` |
+
+The remote `storage` is an IDrive e2 bucket configured in `.dvc/config`: `s3://egyptian-civil-code-rag-data/egyptian-civil-code-rag`, endpoint `https://s3.us-west-2.idrivee2.com`, region `us-west-2`.
+
+**Credentials.** Copy `.env.example` to `.env` and enter an IDrive access key limited to this bucket. Pass the file with `--env-file .env` on commands that contact the bucket. Git ignores `.env`; never commit keys or paste them into issues or chat. Reviewers should receive their own read-only key.
+
+**Reproduce a commit.** This is the reviewer workflow:
+
+```powershell
+uv sync --locked --extra dvc
+uv run --extra dvc --env-file .env dvc pull   # download the PDF into data/raw/ and .dvc/cache/
+uv run --extra dvc dvc repro                  # rebuild the corpus; "up to date" means it matches dvc.lock
+```
+
+**Change the extractor.** Run `uv run --extra dvc dvc repro`, review the `data/processed/` diff, and commit it together with `dvc.lock`. The corpus travels through Git, so no DVC push is needed.
+
+**Replace the source PDF.** Run `uv run --extra dvc dvc add data/raw/egyption-low.pdf` and `uv run --extra dvc dvc repro`. Commit the `.dvc` file, `dvc.lock`, and the corpus, then run `uv run --extra dvc --env-file .env dvc push` before `git push`. If Git receives a pointer whose file never reached the bucket, the change cannot be reproduced.
+
+**Go back to an earlier version.** Run `git checkout <commit>` and then `uv run --extra dvc --env-file .env dvc pull`.
+
+`uv run --extra dvc dvc status` checks the workspace against `dvc.lock`, and `uv run --extra dvc --env-file .env dvc status -c` compares the local cache with the bucket. Without credentials, the restore command above still provides the PDF from `main`.
 
 ## Design and milestones
 

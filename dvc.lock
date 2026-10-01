@@ -11,22 +11,22 @@ stages:
       size: 2599703
     - path: pyproject.toml
       hash: md5
-      md5: 85c317da61594c33656796102a4ff95b
-      size: 684
+      md5: 87db15acbefd04744e7dda9717e593b9
+      size: 688
     - path: src/egyptian_civil_code_rag/extraction.py
       hash: md5
-      md5: d2676907d5e3a4938a036e5104fb2b3f
-      size: 21710
+      md5: 90e83ddd6f41cffa2510d58be43706f6
+      size: 23654
     - path: uv.lock
       hash: md5
-      md5: c4e947b3aa21b98531e091e924cec1f0
-      size: 172053
+      md5: 8bbd8848e7a846f0158502af449d3565
+      size: 181149
     outs:
     - path: data/processed/egyptian_civil_code.json
       hash: md5
-      md5: 14012900f5637f630431d8283a50321f
-      size: 2350839
+      md5: aa99eba572a38dd6b535b63b925890ac
+      size: 2352329
     - path: data/processed/egyptian_civil_code.md
       hash: md5
-      md5: 4ad0bbac1f0d41cc683301997120f525
-      size: 1086182
+      md5: bc71224a427dc2bdadba80c0fe2efe1f
+      size: 1085299
