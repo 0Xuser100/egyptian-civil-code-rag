@@ -130,5 +130,6 @@ def main():
         print(f"- {record.get('id')}: {record.get('flags')}")
 
 
+    
 if __name__ == "__main__":
     main()
