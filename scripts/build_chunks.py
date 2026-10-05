@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 
-
 SOURCE_PATH = Path("data/processed/egyptian_civil_code.json")
 OUTPUT_PATH = Path("data/processed/rag_chunks.json")
 

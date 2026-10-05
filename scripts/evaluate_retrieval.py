@@ -5,7 +5,6 @@ import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-
 MODEL_NAME = "BAAI/bge-m3"
 
 INDEX_PATH = Path("data/processed/civil_code.faiss")

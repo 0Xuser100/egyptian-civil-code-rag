@@ -4,7 +4,6 @@ from pathlib import Path
 import faiss
 import numpy as np
 
-
 EMBEDDINGS_PATH = Path("data/processed/embeddings.npy")
 CHUNKS_PATH = Path("data/processed/rag_chunks.json")
 INDEX_PATH = Path("data/processed/civil_code.faiss")
