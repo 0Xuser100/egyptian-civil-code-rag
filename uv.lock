@@ -814,6 +814,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "faiss-cpu" },
+    { name = "fastapi" },
     { name = "langchain" },
     { name = "mlflow" },
     { name = "ollama" },
@@ -836,6 +837,7 @@ dev = [
 requires-dist = [
     { name = "dvc", extras = ["s3"], marker = "extra == 'dvc'", specifier = ">=3,<4" },
     { name = "faiss-cpu", specifier = ">=1.15.1" },
+    { name = "fastapi", specifier = ">=0.142.2" },
     { name = "langchain", specifier = ">=1.4.3" },
     { name = "mlflow", specifier = ">=3.16.1" },
     { name = "ollama", specifier = ">=0.6.3" },

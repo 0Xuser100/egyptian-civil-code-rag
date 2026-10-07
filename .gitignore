@@ -20,3 +20,4 @@ reports/generated/
 # MLflow local database
 mlflow.db
 
+mlruns/

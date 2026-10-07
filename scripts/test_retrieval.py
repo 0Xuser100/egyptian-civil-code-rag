@@ -1,7 +1,9 @@
 import json
+import time
 from pathlib import Path
 
 import faiss
+import mlflow
 import numpy as np
 import ollama
 from sentence_transformers import SentenceTransformer
@@ -96,8 +98,7 @@ Context:
 Question:
 {question}
 """
-    print("\n===== CONTEXT SENT TO LLM =====")
-    print(context)
+
     response = ollama.chat(
         model=LLM_MODEL,
         messages=[
@@ -116,48 +117,101 @@ Question:
 
 
 def main() -> None:
-    print("Loading embedding model...")
-    embedding_model = SentenceTransformer(
-        EMBEDDING_MODEL,
-        device="cpu",
-    )
+    mlflow.set_experiment("egyptian-civil-code-rag")
 
-    print("Loading FAISS index...")
-    index = faiss.read_index(str(INDEX_PATH))
+    with mlflow.start_run(run_name="rag-query"):
 
-    with CHUNKS_PATH.open("r", encoding="utf-8") as file:
-        chunks = json.load(file)
+        mlflow.log_param("embedding_model", EMBEDDING_MODEL)
+        mlflow.log_param("llm_model", LLM_MODEL)
+        mlflow.log_param("vector_store", "FAISS")
+        mlflow.log_param("top_k", TOP_K)
+        mlflow.log_param("embedding_dimension", 1024)
 
-    question = "ما هو سن الرشد؟"
-
-    print(f"\nQuestion: {question}")
-
-    results = retrieve_articles(
-        question,
-        embedding_model,
-        index,
-        chunks,
-    )
-
-    print("\n===== RETRIEVED ARTICLES =====")
-
-    for rank, result in enumerate(results, start=1):
-        print(
-            f"{rank}. Article {result['article_number']} "
-            f"(score={result['score']:.4f})"
+        print("Loading embedding model...")
+        embedding_model = SentenceTransformer(
+            EMBEDDING_MODEL,
+            device="cpu",
         )
 
-    context = build_context(results)
+        print("Loading FAISS index...")
+        index = faiss.read_index(str(INDEX_PATH))
 
-    print("\n===== ASKING QWEN2.5 =====")
+        with CHUNKS_PATH.open("r", encoding="utf-8") as file:
+            chunks = json.load(file)
 
-    answer = ask_llm(
-        question,
-        context,
-    )
+        question = "ما هو سن الرشد؟"
 
-    print("\n===== FINAL ANSWER =====")
-    print(answer)
+        mlflow.log_param("question", question)
+
+        print(f"\nQuestion: {question}")
+
+        retrieval_start = time.perf_counter()
+
+        results = retrieve_articles(
+            question,
+            embedding_model,
+            index,
+            chunks,
+        )
+
+        retrieval_latency = time.perf_counter() - retrieval_start
+
+        mlflow.log_metric(
+            "retrieval_latency_seconds",
+            retrieval_latency,
+        )
+
+        print("\n===== RETRIEVED ARTICLES =====")
+
+        for rank, result in enumerate(results, start=1):
+            print(
+                f"{rank}. Article {result['article_number']} "
+                f"(score={result['score']:.4f})"
+            )
+
+        mlflow.log_param(
+            "retrieved_articles",
+            ",".join(
+                str(result["article_number"])
+                for result in results
+            ),
+        )
+
+        context = build_context(results)
+
+        print("\n===== ASKING QWEN2.5 =====")
+
+        generation_start = time.perf_counter()
+
+        answer = ask_llm(
+            question,
+            context,
+        )
+
+        generation_latency = time.perf_counter() - generation_start
+
+        total_latency = retrieval_latency + generation_latency
+
+        mlflow.log_metric(
+            "generation_latency_seconds",
+            generation_latency,
+        )
+
+        mlflow.log_metric(
+            "total_latency_seconds",
+            total_latency,
+        )
+
+        print("\n===== FINAL ANSWER =====")
+        print(answer)
+
+        mlflow.log_text(
+            answer,
+            "answer.txt",
+        )
+
+        print("\n===== MLFLOW =====")
+        print("Run logged successfully.")
 
 
 if __name__ == "__main__":
