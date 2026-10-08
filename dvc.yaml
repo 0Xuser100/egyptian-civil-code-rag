@@ -1,3 +1,4 @@
+
 stages:
   extract_corpus:
     cmd: >-
@@ -10,7 +11,31 @@ stages:
       - pyproject.toml
       - uv.lock
     outs:
-      - data/processed/egyptian_civil_code.json:
-          cache: false
-      - data/processed/egyptian_civil_code.md:
-          cache: false
+      - data/processed/egyptian_civil_code.json
+      - data/processed/egyptian_civil_code.md
+
+  build_chunks:
+    cmd: uv run --locked python scripts/build_chunks.py
+    deps:
+      - data/processed/egyptian_civil_code.json
+      - scripts/build_chunks.py
+    outs:
+      - data/processed/rag_chunks.json
+
+  build_embeddings:
+    cmd: uv run --locked python scripts/build_embedding.py
+    deps:
+      - data/processed/rag_chunks.json
+      - scripts/build_embedding.py
+    outs:
+      - data/processed/embeddings.npy
+
+  build_faiss:
+    cmd: uv run --locked python scripts/build_faiss.py
+    deps:
+      - data/processed/embeddings.npy
+      - data/processed/rag_chunks.json
+      - scripts/build_faiss.py
+    outs:
+      - data/processed/civil_code.faiss
+      - data/processed/chunk_ids.json

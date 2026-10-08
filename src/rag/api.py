@@ -5,6 +5,7 @@ import mlflow
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, field_validator
 
+from rag.config import MLFLOW_EXPERIMENT
 from rag.pipeline import RAGPipeline
 
 pipeline: RAGPipeline | None = None
@@ -29,9 +30,6 @@ app = FastAPI(
 )
 
 
-
-
-
 class AskRequest(BaseModel):
     question: str = Field(
         ...,
@@ -51,24 +49,26 @@ class AskRequest(BaseModel):
         return value
 
 
-class Source(BaseModel):
-    article_number: int
-    score: float
-    id: str
-
-
 class AskResponse(BaseModel):
     question: str
     answer: str
-    sources: list[Source]
+    sources: list[str]
 
 
 @app.get("/health")
-def health() -> dict[str, str]:
-    return {"status": "ok"}
+def health() -> dict[str, int | str]:
+    if pipeline is None:
+        raise HTTPException(
+            status_code=503,
+            detail="RAG pipeline is not ready.",
+        )
+
+    return {
+        "status": "healthy",
+        "documents_indexed": len(pipeline.chunks),
+    }
 
 
-@app.post("/ask", response_model=AskResponse)
 @app.post("/ask", response_model=AskResponse)
 def ask(request: AskRequest) -> AskResponse:
     if pipeline is None:
@@ -79,7 +79,7 @@ def ask(request: AskRequest) -> AskResponse:
 
     start_time = time.perf_counter()
 
-    mlflow.set_experiment("egyptian-civil-code-rag")
+    mlflow.set_experiment(MLFLOW_EXPERIMENT)
 
     try:
         with mlflow.start_run(run_name="api-query"):
@@ -99,18 +99,25 @@ def ask(request: AskRequest) -> AskResponse:
                 len(result["sources"]),
             )
 
-            mlflow.log_param(
-                "top_article",
-                result["sources"][0]["article_number"],
-            )
+            if result["sources"]:
+                mlflow.log_param(
+                    "top_article",
+                    result["sources"][0],
+                )
 
-            return AskResponse(
+            response = AskResponse(
                 question=result["question"],
                 answer=result["answer"],
                 sources=result["sources"],
             )
 
+            return response
+
+    except HTTPException:
+        raise
+
     except Exception as exc:
+        print(f"RAG ERROR: {exc!r}")
         raise HTTPException(
             status_code=500,
             detail="Failed to process the question.",

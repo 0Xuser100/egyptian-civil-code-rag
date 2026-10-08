@@ -52,15 +52,13 @@ class RAGPipeline:
             context=context,
         )
 
+        sources = [
+            f"المادة {result['article_number']}"
+            for result in results
+        ]
+
         return {
             "question": question,
             "answer": answer,
-            "sources": [
-                {
-                    "article_number": result["article_number"],
-                    "score": result["score"],
-                    "id": result["id"],
-                }
-                for result in results
-            ],
+            "sources": sources,
         }

@@ -1,6 +1,16 @@
+import os
+
 import ollama
 
 from rag.config import LLM_MODEL
+
+OLLAMA_HOST = os.getenv(
+    "OLLAMA_HOST",
+    "http://localhost:11434",
+)
+
+client = ollama.Client(host=OLLAMA_HOST)
+
 
 SYSTEM_PROMPT = """
 You are a legal RAG assistant for the Egyptian Civil Code.
@@ -50,7 +60,7 @@ Question:
 {question}
 """
 
-    response = ollama.chat(
+    response = client.chat(
         model=LLM_MODEL,
         messages=[
             {

@@ -6,7 +6,6 @@ from pathlib import Path
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-
 MODEL_NAME = "BAAI/bge-m3"
 CHUNKS_PATH = Path("data/processed/rag_chunks.json")
 OUTPUT_PATH = Path("data/processed/embeddings.npy")

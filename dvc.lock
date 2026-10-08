@@ -11,16 +11,16 @@ stages:
       size: 2599703
     - path: pyproject.toml
       hash: md5
-      md5: 87db15acbefd04744e7dda9717e593b9
-      size: 688
+      md5: 3ef30cb30507afd18c156083a046d259
+      size: 840
     - path: src/egyptian_civil_code_rag/extraction.py
       hash: md5
       md5: 90e83ddd6f41cffa2510d58be43706f6
       size: 23654
     - path: uv.lock
       hash: md5
-      md5: 8bbd8848e7a846f0158502af449d3565
-      size: 181149
+      md5: 2e48ca1d4bf6c0ac3c9d863f484003d6
+      size: 358874
     outs:
     - path: data/processed/egyptian_civil_code.json
       hash: md5
@@ -30,3 +30,59 @@ stages:
       hash: md5
       md5: bc71224a427dc2bdadba80c0fe2efe1f
       size: 1085299
+  build_chunks:
+    cmd: uv run --locked python scripts/build_chunks.py
+    deps:
+    - path: data/processed/egyptian_civil_code.json
+      hash: md5
+      md5: aa99eba572a38dd6b535b63b925890ac
+      size: 2352329
+    - path: scripts/build_chunks.py
+      hash: md5
+      md5: d79790ef0466448a04e2bbe8471f10b8
+      size: 3327
+    outs:
+    - path: data/processed/rag_chunks.json
+      hash: md5
+      md5: e08df242ae0de865f9ee8872e1d75cb4
+      size: 2883251
+  build_embeddings:
+    cmd: uv run --locked python scripts/build_embedding.py
+    deps:
+    - path: data/processed/rag_chunks.json
+      hash: md5
+      md5: e08df242ae0de865f9ee8872e1d75cb4
+      size: 2883251
+    - path: scripts/build_embedding.py
+      hash: md5
+      md5: 6cbe6b02ce42bbb076ff4a2d910864a3
+      size: 1311
+    outs:
+    - path: data/processed/embeddings.npy
+      hash: md5
+      md5: 0a3a8fcac3208a89bb964bfcf19b0d43
+      size: 4477056
+  build_faiss:
+    cmd: uv run --locked python scripts/build_faiss.py
+    deps:
+    - path: data/processed/embeddings.npy
+      hash: md5
+      md5: 0a3a8fcac3208a89bb964bfcf19b0d43
+      size: 4477056
+    - path: data/processed/rag_chunks.json
+      hash: md5
+      md5: e08df242ae0de865f9ee8872e1d75cb4
+      size: 2883251
+    - path: scripts/build_faiss.py
+      hash: md5
+      md5: bb784aaf6778dc3a51ef5b98445431fa
+      size: 1531
+    outs:
+    - path: data/processed/chunk_ids.json
+      hash: md5
+      md5: 7f5b10f21278e6ef5812c963f5c77bdd
+      size: 17491
+    - path: data/processed/civil_code.faiss
+      hash: md5
+      md5: b1a6c5a5b49147c14d9869cc7e257a67
+      size: 4476973
