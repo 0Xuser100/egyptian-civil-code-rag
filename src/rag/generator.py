@@ -1,4 +1,5 @@
 import os
+from collections.abc import Iterator
 
 import ollama
 
@@ -32,20 +33,6 @@ STRICT RULES:
 9. Keep the answer concise and precise.
 10. Do not translate or rewrite article numbers unnecessarily.
 
-Example:
-
-Question:
-ما هو سن الرشد؟
-
-Context contains Article 44 stating that the age of majority is 21 completed
-Gregorian years.
-
-Good answer:
-"سن الرشد هو إتمام 21 سنة ميلادية كاملة، وفقًا للمادة 44."
-
-Bad answer:
-"سن الرشد هو 21 سنة وفقًا للمادتين 44 و46."
-Reason: Article 46 does not directly provide the answer.
 
 Return ONLY the final answer. Do not explain your reasoning.
 """
@@ -75,3 +62,39 @@ Question:
     )
 
     return response["message"]["content"]
+
+
+
+
+
+def generate_answer_stream(
+    question: str,
+    context: str,
+) -> Iterator[str]:
+    user_prompt = f"""
+Context:
+{context}
+
+Question:
+{question}
+"""
+
+    stream = client.chat(
+        model=LLM_MODEL,
+        messages=[
+            {
+                "role": "system",
+                "content": SYSTEM_PROMPT,
+            },
+            {
+                "role": "user",
+                "content": user_prompt,
+            },
+        ],
+        stream=True,
+    )
+
+    for chunk in stream:
+        token = chunk["message"]["content"]
+        if token:
+            yield token

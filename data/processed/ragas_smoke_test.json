@@ -1,0 +1,19 @@
+{
+  "question": "ما هو سن الرشد؟",
+  "reference_answer": "سن الرشد هو إحدى وعشرون سنة ميلادية كاملة.",
+  "answer": "سن الرشد هو 21 عامًا ميلادية كاملة.",
+  "retrieved_contexts": [
+    "Article 44\n\nArabic:\n( مادة\n٤٤(\n(١ (\n، كل شخص بلغ سن الرشد متمتعا بقواه العقلية ، ولم يحجر عليه\nيكون كامل الأهلية لمباشرة حقوقه المدنية .\n)٢ (وسن الرشد هى إحدى وعشرون سنة ميلادية كاملة .\n\nEnglish:\nArticle 44\nAll persons attaining majority in possession of their\nmental faculties and not under legal disability, have full\nlegal capacity to exercise their civil rights.\nThe majority of a person is fixed at twenty one years\ncompleted in accordance with the Gregorian calendar.",
+    "Article 46\n\nArabic:\n( مادة\n٤٦(\nكل من بلغ سن التمييز ولم يبلغ سن الرش د وكل من بلغ سن الرشد وكان\nسفيهاً أو ذا غفلة ' يكون ناقص الأهلية وفقاً لما يقرره القانون.\n\nEnglish:\nArticle 46\nA person who has reached the age of discretion but has\nnot attained majority and a person who has attained his\nmajority but is a prodigal or an imbecile, has a limited\nlegal capacity according to the provisions of the law.",
+    "Article 45\n\nArabic:\n( مادة\n٤٥(\n)١ (\nلا يكون أهلا لمباشرة حقوقه المدنية من كان فاقد التمييز لصغر في\nالسن أو عته أو جنون.\n(٢ (\nًوكل من لم يبلغ السابعة يعتبر فاقدا للتمييز.\n\nEnglish:\nArticle 45\nA person devoid of discretion, owing to youth, feeble\nmindedness or insanity is incapable of exercising his civil\nrights.\nA person who has not attained the age of seven is\nconsidered devoid of discretion.",
+    "Article 375\n\nArabic:\nمادة\n٣٧٥\n(١ (يتقادم بخمس سنوات كل حق دوري مت جدد واو اقر به المدين ، كأجرة\nالمباني والأراضي الزراعية ومقابل الحكر ، وكالفوائد والإيرادات المترتبة\nالمهاياة والأجور والمعاشات.\n)٢ (\nولا يسقط الريع المستحق في ذمة الحائز سيئ النية ، ولا الريع الواجب\nعلى ناظر الوقف أداؤه للمستحقين ، إلا بانقضاء خمس عشرة سنة.\n\nEnglish:\nArticle 375\nThe term of prescription for sums payable periodically at\nrecurring intervals such as the rent of buildings and of\nagricultural land, the rent of hekr, interest, periodical\npayments, salaries, wages and pensions, is five years,\neven if the debt is admitted by the debtor.",
+    "Article 112\n\nArabic:\nمادة\n١١٢\nإذا بلغ الصبى المميز الثامنة عشرة من عمره واذن له فى تسلم أمواله\nلإدار\nته ا ، أو تسلمها بحكم القانون ، كانت أعمال الادارة الصادرة منه\nصحيحة فى الحدود التى رسمها القانون.\n\nEnglish:\nArticle 112\nA minor possessing discretion, who has attained the age\nof eighteen years and has been authorized to take\npossession of his property in order to manage it, or has\ntaken possession of his property by virtue of law, may\nvalidly perform acts of management within the limits of\nthe law."
+  ],
+  "scores": {
+    "faithfulness": 0.5,
+    "answer_relevancy": 0.8980495858977827,
+    "context_precision": 0.9999999999,
+    "context_recall": 1.0
+  },
+  "duration_seconds": 225.33786529999998
+}

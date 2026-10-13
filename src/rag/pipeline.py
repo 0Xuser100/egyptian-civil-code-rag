@@ -1,11 +1,12 @@
 import json
+from collections.abc import Iterator
 from pathlib import Path
 
 import faiss
 
 from rag.config import CHUNKS_PATH, INDEX_PATH, TOP_K
 from rag.embeddings import load_embedding_model
-from rag.generator import generate_answer
+from rag.generator import generate_answer, generate_answer_stream
 from rag.retriever import retrieve_articles
 
 
@@ -52,13 +53,26 @@ class RAGPipeline:
             context=context,
         )
 
-        sources = [
-            f"المادة {result['article_number']}"
-            for result in results
-        ]
+        sources = [f"المادة {result['article_number']}" for result in results]
 
         return {
             "question": question,
             "answer": answer,
             "sources": sources,
         }
+
+    def ask_stream(self, question: str) -> Iterator[str]:
+        results = retrieve_articles(
+            question=question,
+            model=self.embedding_model,
+            index=self.index,
+            chunks=self.chunks,
+            top_k=TOP_K,
+        )
+
+        context = build_context(results)
+
+        yield from generate_answer_stream(
+            question=question,
+            context=context,
+        )

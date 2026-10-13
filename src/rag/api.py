@@ -1,14 +1,25 @@
+
 import time
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 import mlflow
+from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
+from langfuse import get_client
 from pydantic import BaseModel, Field, field_validator
 
-from rag.config import MLFLOW_EXPERIMENT
-from rag.pipeline import RAGPipeline
+from rag.config import MLFLOW_EXPERIMENT, TOP_K
+from rag.generator import generate_answer
+from rag.pipeline import RAGPipeline, build_context
+from rag.retriever import retrieve_articles
+
+# Load Langfuse environment variables before creating the client.
+ENV_FILE = Path(__file__).resolve().parents[2] / ".env.langfuse"
+load_dotenv(ENV_FILE, override=False)
 
 pipeline: RAGPipeline | None = None
+langfuse = get_client()
 
 
 @asynccontextmanager
@@ -17,9 +28,11 @@ async def lifespan(app: FastAPI):
 
     pipeline = RAGPipeline()
 
-    yield
-
-    pipeline = None
+    try:
+        yield
+    finally:
+        pipeline = None
+        langfuse.flush()
 
 
 app = FastAPI(
@@ -78,47 +91,118 @@ def ask(request: AskRequest) -> AskResponse:
         )
 
     start_time = time.perf_counter()
-
     mlflow.set_experiment(MLFLOW_EXPERIMENT)
 
-    try:
-        with mlflow.start_run(run_name="api-query"):
-            mlflow.log_param("question", request.question)
+    with langfuse.start_as_current_observation(
+        as_type="span",
+        name="rag.ask",
+        input={"question": request.question},
+    ) as root:
+        try:
+            with mlflow.start_run(run_name="api-query"):
+                mlflow.log_param("question", request.question)
 
-            result = pipeline.ask(request.question)
+                # Retrieval span
+                with langfuse.start_as_current_observation(
+                    as_type="span",
+                    name="rag.retrieval",
+                    input={"question": request.question},
+                ) as retrieval_span:
+                    results = retrieve_articles(
+                        question=request.question,
+                        model=pipeline.embedding_model,
+                        index=pipeline.index,
+                        chunks=pipeline.chunks,
+                        top_k=TOP_K,
+                    )
 
-            latency = time.perf_counter() - start_time
+                    retrieval_span.update(
+                        output={
+                            "retrieved_count": len(results),
+                            "results": [
+                                {
+                                    "article_number": item["article_number"],
+                                    "chunk_id": item["id"],
+                                    "score": item["score"],
+                                }
+                                for item in results
+                            ],
+                        },
+                    )
 
-            mlflow.log_metric(
-                "total_latency_seconds",
-                latency,
-            )
+                context = build_context(results)
 
-            mlflow.log_metric(
-                "retrieved_sources_count",
-                len(result["sources"]),
-            )
+                # Generation span
+                with langfuse.start_as_current_observation(
+                    as_type="generation",
+                    name="rag.generation",
+                    input={
+                        "question": request.question,
+                        "context": context,
+                    },
+                ) as generation:
+                    answer = generate_answer(
+                        question=request.question,
+                        context=context,
+                    )
 
-            if result["sources"]:
-                mlflow.log_param(
-                    "top_article",
-                    result["sources"][0],
+                    generation.update(output=answer)
+
+                sources = [
+                    f"المادة {result['article_number']}"
+                    for result in results
+                ]
+
+                response = AskResponse(
+                    question=request.question,
+                    answer=answer,
+                    sources=sources,
                 )
 
-            response = AskResponse(
-                question=result["question"],
-                answer=result["answer"],
-                sources=result["sources"],
+                latency = time.perf_counter() - start_time
+
+                # MLflow metrics
+                mlflow.log_metric(
+                    "total_latency_seconds",
+                    latency,
+                )
+                mlflow.log_metric(
+                    "retrieved_sources_count",
+                    len(sources),
+                )
+
+                if sources:
+                    mlflow.log_param("top_article", sources[0])
+
+                # Root observation output
+                root.update(
+                    output={
+                        "answer": response.answer,
+                        "sources": response.sources,
+                    },
+                    metadata={
+                        "latency_seconds": latency,
+                        "retrieved_sources_count": len(sources),
+                    },
+                )
+
+                return response
+
+        except HTTPException:
+            root.update(
+                level="ERROR",
+                status_message="HTTP error while processing request",
             )
+            raise
 
-            return response
+        except Exception as exc:
+            root.update(
+                level="ERROR",
+                status_message="Failed to process RAG request",
+            )
+            print(f"RAG ERROR: {exc!r}")
 
-    except HTTPException:
-        raise
-
-    except Exception as exc:
-        print(f"RAG ERROR: {exc!r}")
-        raise HTTPException(
-            status_code=500,
-            detail="Failed to process the question.",
-        ) from exc
+            raise HTTPException(
+                status_code=500,
+                detail="Failed to process the question.",
+            ) from exc

@@ -1,0 +1,217 @@
+{
+  "embedding_model": "BAAI/bge-m3",
+  "llm_model": "qwen2.5:3b",
+  "top_k": 5,
+  "total_selected": 5,
+  "completed": 4,
+  "results": [
+    {
+      "question_id": 1,
+      "question": "ما هو سن الرشد؟",
+      "answerable": true,
+      "reference_answer": "سن الرشد هو إحدى وعشرون سنة ميلادية كاملة.",
+      "generated_answer": "سن الرشد هو 21 سنة ميلادية كاملة.",
+      "latency_seconds": 19.46,
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.6703715920448303
+        },
+        {
+          "article_number": 46,
+          "score": 0.500866174697876
+        },
+        {
+          "article_number": 45,
+          "score": 0.4626806378364563
+        },
+        {
+          "article_number": 375,
+          "score": 0.4407404363155365
+        },
+        {
+          "article_number": 112,
+          "score": 0.4387573003768921
+        }
+      ],
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "duration_seconds": 54.064,
+          "error": null
+        },
+        "answer_relevancy": {
+          "score": 0.8980495803600025,
+          "duration_seconds": 20.714,
+          "error": null
+        },
+        "context_precision": {
+          "score": null,
+          "duration_seconds": 0.0,
+          "error": "TypeError: ContextPrecisionWithReference.ascore() got an unexpected keyword argument 'response'"
+        },
+        "context_recall": {
+          "score": null,
+          "duration_seconds": 0.0,
+          "error": "TypeError: ContextRecall.ascore() got an unexpected keyword argument 'response'"
+        }
+      }
+    },
+    {
+      "question_id": 2,
+      "question": "What is the age of majority?",
+      "answerable": true,
+      "reference_answer": "The age of majority is twenty one years completed according to the Gregorian calendar.",
+      "generated_answer": "The age of majority is 21 years completed in accordance with the Gregorian calendar.",
+      "latency_seconds": 12.504,
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.6579602956771851
+        },
+        {
+          "article_number": 46,
+          "score": 0.5435848236083984
+        },
+        {
+          "article_number": 45,
+          "score": 0.5111317038536072
+        },
+        {
+          "article_number": 112,
+          "score": 0.5104308128356934
+        },
+        {
+          "article_number": 828,
+          "score": 0.5072574615478516
+        }
+      ],
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "duration_seconds": 32.269,
+          "error": null
+        },
+        "answer_relevancy": {
+          "score": 0.6996659595930833,
+          "duration_seconds": 11.5,
+          "error": null
+        },
+        "context_precision": {
+          "score": null,
+          "duration_seconds": 0.0,
+          "error": "TypeError: ContextPrecisionWithReference.ascore() got an unexpected keyword argument 'response'"
+        },
+        "context_recall": {
+          "score": null,
+          "duration_seconds": 0.0,
+          "error": "TypeError: ContextRecall.ascore() got an unexpected keyword argument 'response'"
+        }
+      }
+    },
+    {
+      "question_id": 3,
+      "question": "متى يعتبر الشخص فاقدا للتمييز؟",
+      "answerable": true,
+      "reference_answer": "يعتبر من لم يبلغ السابعة فاقدا للتمييز، كما يكون فاقد التمييز بسبب صغر السن أو العته أو الجنون.",
+      "generated_answer": "يُعتبر الشخص فاقداً للتمييز إذا لم يبلغ السابعة من العمر.",
+      "latency_seconds": 20.079,
+      "retrieved_articles": [
+        {
+          "article_number": 45,
+          "score": 0.6211670637130737
+        },
+        {
+          "article_number": 46,
+          "score": 0.5241901874542236
+        },
+        {
+          "article_number": 871,
+          "score": 0.5212122201919556
+        },
+        {
+          "article_number": 370,
+          "score": 0.49273204803466797
+        },
+        {
+          "article_number": 110,
+          "score": 0.4923420250415802
+        }
+      ],
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "duration_seconds": 35.406,
+          "error": null
+        },
+        "answer_relevancy": {
+          "score": 0.0,
+          "duration_seconds": 19.256,
+          "error": null
+        },
+        "context_precision": {
+          "score": null,
+          "duration_seconds": 0.0,
+          "error": "TypeError: ContextPrecisionWithReference.ascore() got an unexpected keyword argument 'response'"
+        },
+        "context_recall": {
+          "score": null,
+          "duration_seconds": 0.0,
+          "error": "TypeError: ContextRecall.ascore() got an unexpected keyword argument 'response'"
+        }
+      }
+    },
+    {
+      "question_id": 4,
+      "question": "What age is a person considered devoid of discretion?",
+      "answerable": true,
+      "reference_answer": "A person who has not attained the age of seven is considered devoid of discretion.",
+      "generated_answer": "A person is considered devoid of discretion if they are:\n\n- Younger than 7 years old (Article 45, Part 2)",
+      "latency_seconds": 11.916,
+      "retrieved_articles": [
+        {
+          "article_number": 45,
+          "score": 0.6884241104125977
+        },
+        {
+          "article_number": 46,
+          "score": 0.5705739259719849
+        },
+        {
+          "article_number": 110,
+          "score": 0.5386026501655579
+        },
+        {
+          "article_number": 112,
+          "score": 0.5325524806976318
+        },
+        {
+          "article_number": 44,
+          "score": 0.5227688550949097
+        }
+      ],
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "duration_seconds": 29.217,
+          "error": null
+        },
+        "answer_relevancy": {
+          "score": 0.0,
+          "duration_seconds": 11.767,
+          "error": null
+        },
+        "context_precision": {
+          "score": null,
+          "duration_seconds": 0.0,
+          "error": "TypeError: ContextPrecisionWithReference.ascore() got an unexpected keyword argument 'response'"
+        },
+        "context_recall": {
+          "score": null,
+          "duration_seconds": 0.0,
+          "error": "TypeError: ContextRecall.ascore() got an unexpected keyword argument 'response'"
+        }
+      }
+    }
+  ]
+}
