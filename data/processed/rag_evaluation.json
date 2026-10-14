@@ -1,0 +1,1043 @@
+{
+  "configuration": {
+    "embedding_model": "BAAI/bge-m3",
+    "llm_model": "qwen2.5:3b",
+    "top_k": 5
+  },
+  "metrics": {
+    "total_questions": 25,
+    "answerable_questions": 20,
+    "unanswerable_questions": 5,
+    "retrieval_recall": 1.0,
+    "citation_accuracy": 0.6,
+    "mean_answer_correctness_signal": 0.7417,
+    "abstention_accuracy": 0.8,
+    "unsupported_number_rate": 0.2,
+    "mean_latency_seconds": 23.342
+  },
+  "results": [
+    {
+      "id": 1,
+      "question": "ما هو سن الرشد؟",
+      "answerable": true,
+      "expected_articles": [
+        44
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.6703715920448303
+        },
+        {
+          "article_number": 46,
+          "score": 0.500866174697876
+        },
+        {
+          "article_number": 45,
+          "score": 0.4626806378364563
+        },
+        {
+          "article_number": 375,
+          "score": 0.4407404363155365
+        },
+        {
+          "article_number": 112,
+          "score": 0.4387573003768921
+        }
+      ],
+      "answer": "سن الرشد هو 21 سنة حسب Article 44.",
+      "latency_seconds": 23.291,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "21",
+        "سنة",
+        "الرشد"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": [
+        "21"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the age of majority?",
+      "answerable": true,
+      "expected_articles": [
+        44
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.6579602956771851
+        },
+        {
+          "article_number": 46,
+          "score": 0.5435848236083984
+        },
+        {
+          "article_number": 45,
+          "score": 0.5111317038536072
+        },
+        {
+          "article_number": 112,
+          "score": 0.5104308128356934
+        },
+        {
+          "article_number": 828,
+          "score": 0.5072574615478516
+        }
+      ],
+      "answer": "The age of majority is 21 years.",
+      "latency_seconds": 13.191,
+      "retrieval_hit": true,
+      "citation_correct": false,
+      "matched_key_facts": [
+        "21",
+        "majority"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": [
+        "21"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "متى يعتبر الشخص فاقدا للتمييز؟",
+      "answerable": true,
+      "expected_articles": [
+        45
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 45,
+          "score": 0.6211670637130737
+        },
+        {
+          "article_number": 46,
+          "score": 0.5241901874542236
+        },
+        {
+          "article_number": 871,
+          "score": 0.5212122201919556
+        },
+        {
+          "article_number": 370,
+          "score": 0.49273204803466797
+        },
+        {
+          "article_number": 110,
+          "score": 0.4923420250415802
+        }
+      ],
+      "answer": "يُعتبر الشخص فاقدا للتمييز إذا لم يبلغ السابعة من العمر.",
+      "latency_seconds": 18.728,
+      "retrieval_hit": true,
+      "citation_correct": false,
+      "matched_key_facts": [
+        "فاقد"
+      ],
+      "answer_correctness_signal": 0.333,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 4,
+      "question": "What age is a person considered devoid of discretion?",
+      "answerable": true,
+      "expected_articles": [
+        45
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 45,
+          "score": 0.6884241104125977
+        },
+        {
+          "article_number": 46,
+          "score": 0.5705739259719849
+        },
+        {
+          "article_number": 110,
+          "score": 0.5386026501655579
+        },
+        {
+          "article_number": 112,
+          "score": 0.5325524806976318
+        },
+        {
+          "article_number": 44,
+          "score": 0.5227688550949097
+        }
+      ],
+      "answer": "A person is considered devoid of discretion if they have not attained the age of seven.",
+      "latency_seconds": 9.354,
+      "retrieval_hit": true,
+      "citation_correct": false,
+      "matched_key_facts": [
+        "discretion"
+      ],
+      "answer_correctness_signal": 0.5,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 5,
+      "question": "ما هي الأهلية الناقصة؟",
+      "answerable": true,
+      "expected_articles": [
+        46
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 46,
+          "score": 0.5329146981239319
+        },
+        {
+          "article_number": 47,
+          "score": 0.5206155776977539
+        },
+        {
+          "article_number": 119,
+          "score": 0.5166704654693604
+        },
+        {
+          "article_number": 777,
+          "score": 0.4877402186393738
+        },
+        {
+          "article_number": 6,
+          "score": 0.46568772196769714
+        }
+      ],
+      "answer": "الأهلية الناقصة هي المحددة في مادتي 46 و 119 من القانون. يشير المادتان إلى أن الأشخاص الذين لم يبلغوا سن الرشد أو الذين بلغا سن الرشد لكنهم فاقدو أو ناقصو الأهلية، يُعتبرون ناقضين للأهلية وفقًا للقانون.",
+      "latency_seconds": 20.816,
+      "retrieval_hit": true,
+      "citation_correct": false,
+      "matched_key_facts": [
+        "الأهلية",
+        "ناقصة"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 6,
+      "question": "Who has limited legal capacity?",
+      "answerable": true,
+      "expected_articles": [
+        46
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 46,
+          "score": 0.6027564406394958
+        },
+        {
+          "article_number": 47,
+          "score": 0.5528452396392822
+        },
+        {
+          "article_number": 186,
+          "score": 0.5447341203689575
+        },
+        {
+          "article_number": 48,
+          "score": 0.539115309715271
+        },
+        {
+          "article_number": 45,
+          "score": 0.5329036116600037
+        }
+      ],
+      "answer": "A person who has reached the age of discretion but has not attained majority and a person who has attained his majority but is a prodigal or an imbecile, has a limited legal capacity according to the provisions of the law.  \n(Article 46)",
+      "latency_seconds": 10.473,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "limited",
+        "capacity"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 7,
+      "question": "متى يعتبر الشخص كامل الأهلية لمباشرة حقوقه المدنية؟",
+      "answerable": true,
+      "expected_articles": [
+        44
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.684258222579956
+        },
+        {
+          "article_number": 45,
+          "score": 0.6117227673530579
+        },
+        {
+          "article_number": 109,
+          "score": 0.5621538758277893
+        },
+        {
+          "article_number": 46,
+          "score": 0.5607819557189941
+        },
+        {
+          "article_number": 29,
+          "score": 0.552777886390686
+        }
+      ],
+      "answer": "الشخص يعتبر كامل الأهلية لمباشرة حقوقه المدنية عندما يبلغ سن الرشد، وهو ثمانية وعشرين سنة ميلادية كاملة. يحدد هذا في مادة 44 من القانون.",
+      "latency_seconds": 16.002,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "الرشد",
+        "كامل الأهلية"
+      ],
+      "answer_correctness_signal": 0.667,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 8,
+      "question": "متى يكون الشخص غير قادر على مباشرة حقوقه المدنية بسبب فقد التمييز؟",
+      "answerable": true,
+      "expected_articles": [
+        45
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 45,
+          "score": 0.6611841917037964
+        },
+        {
+          "article_number": 46,
+          "score": 0.5674837827682495
+        },
+        {
+          "article_number": 948,
+          "score": 0.508226752281189
+        },
+        {
+          "article_number": 670,
+          "score": 0.5054636597633362
+        },
+        {
+          "article_number": 273,
+          "score": 0.5009549856185913
+        }
+      ],
+      "answer": "متى يكون الشخص غير قادر على مباشرة حقوقه المدنية بسبب فقد التمييز؟\n\nمنقول من مادتي 45 و46:\n\nفأهلا لمباشرة حقوقه المدنية من كان فاقد التمييز لصغر في السن أو عته أو جنون (Article 45).\n\nوكل من لم يبلغ السابعة يعتبر فاقدا للتمييز. (Article 46).",
+      "latency_seconds": 29.881,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "فاقد",
+        "التمييز"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 9,
+      "question": "ماذا يحدث لمن بلغ سن الرشد وكان سفيها أو ذا غفلة؟",
+      "answerable": true,
+      "expected_articles": [
+        46
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 46,
+          "score": 0.6264002323150635
+        },
+        {
+          "article_number": 44,
+          "score": 0.6152457594871521
+        },
+        {
+          "article_number": 45,
+          "score": 0.5607677698135376
+        },
+        {
+          "article_number": 173,
+          "score": 0.521609902381897
+        },
+        {
+          "article_number": 112,
+          "score": 0.5130296349525452
+        }
+      ],
+      "answer": "وفقًا لArticle 45، يتم وصف هذه الحالات كناقصى الأهلية. فلا ي享有 كامل الأهلية ولا يكون ملزما بتعويض الأضرار، ولكنهم لا يعتبرون فاقدى الأهلية كما يظهر في Article 46 حيث يتم وصفهم بأنهم ي享有 أهلية محدودة وفقًا للقانون.",
+      "latency_seconds": 29.101,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [],
+      "answer_correctness_signal": 0.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 10,
+      "question": "What is the legal capacity of a person who has reached majority?",
+      "answerable": true,
+      "expected_articles": [
+        44
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.7175489664077759
+        },
+        {
+          "article_number": 46,
+          "score": 0.6482012271881104
+        },
+        {
+          "article_number": 45,
+          "score": 0.5673906803131104
+        },
+        {
+          "article_number": 109,
+          "score": 0.5634512901306152
+        },
+        {
+          "article_number": 112,
+          "score": 0.5630185008049011
+        }
+      ],
+      "answer": "A person who has reached majority has full legal capacity to exercise their civil rights, as per Article 44.",
+      "latency_seconds": 7.663,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "full",
+        "legal capacity",
+        "majority"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 11,
+      "question": "ما السن الذي يعتبر فيه الشخص فاقدا للتمييز بسبب صغر السن؟",
+      "answerable": true,
+      "expected_articles": [
+        45
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 45,
+          "score": 0.6381579637527466
+        },
+        {
+          "article_number": 46,
+          "score": 0.5538482666015625
+        },
+        {
+          "article_number": 42,
+          "score": 0.519354522228241
+        },
+        {
+          "article_number": 110,
+          "score": 0.5050760507583618
+        },
+        {
+          "article_number": 44,
+          "score": 0.5041946768760681
+        }
+      ],
+      "answer": "الشخص يعتبر فاقدا للتمييز بسبب صغر السن عند الولادة أو قبل الولادة (ماده 45).",
+      "latency_seconds": 12.15,
+      "retrieval_hit": true,
+      "citation_correct": false,
+      "matched_key_facts": [
+        "فاقدا للتمييز"
+      ],
+      "answer_correctness_signal": 0.5,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 12,
+      "question": "What happens to a person who reaches majority but is a prodigal?",
+      "answerable": true,
+      "expected_articles": [
+        46
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 46,
+          "score": 0.5690212249755859
+        },
+        {
+          "article_number": 44,
+          "score": 0.5018299221992493
+        },
+        {
+          "article_number": 487,
+          "score": 0.500950276851654
+        },
+        {
+          "article_number": 494,
+          "score": 0.4903813600540161
+        },
+        {
+          "article_number": 112,
+          "score": 0.48711952567100525
+        }
+      ],
+      "answer": "A person who reaches majority but is a prodigal has limited legal capacity according to the provisions of the law (Article 46).",
+      "latency_seconds": 18.703,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "limited",
+        "capacity"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 13,
+      "question": "What is the age of majority under the Gregorian calendar?",
+      "answerable": true,
+      "expected_articles": [
+        44
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.6163069009780884
+        },
+        {
+          "article_number": 3,
+          "score": 0.5224050879478455
+        },
+        {
+          "article_number": 764,
+          "score": 0.4650164842605591
+        },
+        {
+          "article_number": 46,
+          "score": 0.4622057378292084
+        },
+        {
+          "article_number": 45,
+          "score": 0.45162469148635864
+        }
+      ],
+      "answer": "The age of majority under the Gregorian calendar is 21 years.",
+      "latency_seconds": 18.768,
+      "retrieval_hit": true,
+      "citation_correct": false,
+      "matched_key_facts": [
+        "21",
+        "Gregorian"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": [
+        "21"
+      ]
+    },
+    {
+      "id": 14,
+      "question": "ما هو السن المحدد للرشد وفقا للتقويم الميلادي؟",
+      "answerable": true,
+      "expected_articles": [
+        44
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.6477788686752319
+        },
+        {
+          "article_number": 46,
+          "score": 0.4734233617782593
+        },
+        {
+          "article_number": 112,
+          "score": 0.47278541326522827
+        },
+        {
+          "article_number": 45,
+          "score": 0.47199490666389465
+        },
+        {
+          "article_number": 3,
+          "score": 0.4635810852050781
+        }
+      ],
+      "answer": "السن المحدد للرشد وفقا للتقويم الميلادي هو 21 سنة كاملة.",
+      "latency_seconds": 11.866,
+      "retrieval_hit": true,
+      "citation_correct": false,
+      "matched_key_facts": [
+        "21"
+      ],
+      "answer_correctness_signal": 0.5,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": [
+        "21"
+      ]
+    },
+    {
+      "id": 15,
+      "question": "من بلغ سن التمييز ولم يبلغ سن الرشد يكون ماذا؟",
+      "answerable": true,
+      "expected_articles": [
+        46
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 46,
+          "score": 0.6859318017959595
+        },
+        {
+          "article_number": 45,
+          "score": 0.6459271311759949
+        },
+        {
+          "article_number": 44,
+          "score": 0.5822914838790894
+        },
+        {
+          "article_number": 42,
+          "score": 0.5100014805793762
+        },
+        {
+          "article_number": 112,
+          "score": 0.5023064017295837
+        }
+      ],
+      "answer": "من بلغ سن التمييز ولم يبلغ سن الرشد يكون ناقص الأهلية وفقاً لما يقرره القانون. (من Article 46)",
+      "latency_seconds": 24.879,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "ناقص الأهلية"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 16,
+      "question": "Who has full legal capacity to exercise civil rights?",
+      "answerable": true,
+      "expected_articles": [
+        44
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.6056065559387207
+        },
+        {
+          "article_number": 53,
+          "score": 0.5451006889343262
+        },
+        {
+          "article_number": 45,
+          "score": 0.5398362278938293
+        },
+        {
+          "article_number": 109,
+          "score": 0.5312150716781616
+        },
+        {
+          "article_number": 11,
+          "score": 0.5236536264419556
+        }
+      ],
+      "answer": "All persons attaining majority in possession of their mental faculties and not under legal disability have full legal capacity to exercise their civil rights. (Article 44)",
+      "latency_seconds": 35.947,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "full legal capacity"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 17,
+      "question": "من لم يبلغ السابعة يعتبر فاقدا لماذا؟",
+      "answerable": true,
+      "expected_articles": [
+        45
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 45,
+          "score": 0.6598609685897827
+        },
+        {
+          "article_number": 42,
+          "score": 0.5585089921951294
+        },
+        {
+          "article_number": 46,
+          "score": 0.5405858755111694
+        },
+        {
+          "article_number": 44,
+          "score": 0.5228677988052368
+        },
+        {
+          "article_number": 207,
+          "score": 0.5147575736045837
+        }
+      ],
+      "answer": "من لم يبلغ السابعة يعتبر فاقدا للتمييز وفقاً للArticle 45.",
+      "latency_seconds": 26.643,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "فاقدا للتمييز"
+      ],
+      "answer_correctness_signal": 0.5,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 18,
+      "question": "What is the legal status of a person who has not attained the age of seven?",
+      "answerable": true,
+      "expected_articles": [
+        45
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 45,
+          "score": 0.6640945672988892
+        },
+        {
+          "article_number": 42,
+          "score": 0.6222236156463623
+        },
+        {
+          "article_number": 46,
+          "score": 0.6191282272338867
+        },
+        {
+          "article_number": 44,
+          "score": 0.6145487427711487
+        },
+        {
+          "article_number": 47,
+          "score": 0.5785350203514099
+        }
+      ],
+      "answer": "A person who has not attained the age of seven is considered devoid of discretion.",
+      "latency_seconds": 6.193,
+      "retrieval_hit": true,
+      "citation_correct": false,
+      "matched_key_facts": [
+        "devoid of discretion"
+      ],
+      "answer_correctness_signal": 0.5,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 19,
+      "question": "ماذا يسمى الشخص الذي بلغ سن الرشد وكان سفيها؟",
+      "answerable": true,
+      "expected_articles": [
+        46
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.568288266658783
+        },
+        {
+          "article_number": 46,
+          "score": 0.5637092590332031
+        },
+        {
+          "article_number": 112,
+          "score": 0.48918744921684265
+        },
+        {
+          "article_number": 45,
+          "score": 0.4743228554725647
+        },
+        {
+          "article_number": 173,
+          "score": 0.44374316930770874
+        }
+      ],
+      "answer": "الشخص الذي بلغ سن الرشد وكان سفيهاً يكون ناقص الأهلية وفقاً لما يقرره القانون، وفقاً لArticle 46.",
+      "latency_seconds": 31.506,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "ناقص الأهلية",
+        "سفيها"
+      ],
+      "answer_correctness_signal": 1.0,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 20,
+      "question": "Does reaching majority automatically give full legal capacity?",
+      "answerable": true,
+      "expected_articles": [
+        44
+      ],
+      "retrieved_articles": [
+        {
+          "article_number": 44,
+          "score": 0.6176038980484009
+        },
+        {
+          "article_number": 828,
+          "score": 0.5523127317428589
+        },
+        {
+          "article_number": 46,
+          "score": 0.5406913757324219
+        },
+        {
+          "article_number": 518,
+          "score": 0.5387789011001587
+        },
+        {
+          "article_number": 53,
+          "score": 0.527129054069519
+        }
+      ],
+      "answer": "Yes, reaching majority automatically gives full legal capacity according to Article 44.",
+      "latency_seconds": 29.521,
+      "retrieval_hit": true,
+      "citation_correct": true,
+      "matched_key_facts": [
+        "majority"
+      ],
+      "answer_correctness_signal": 0.333,
+      "abstained": false,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 21,
+      "question": "ما هي عقوبة السرقة في قانون العقوبات المصري؟",
+      "answerable": false,
+      "expected_articles": [],
+      "retrieved_articles": [
+        {
+          "article_number": 173,
+          "score": 0.5109524726867676
+        },
+        {
+          "article_number": 977,
+          "score": 0.488395094871521
+        },
+        {
+          "article_number": 172,
+          "score": 0.47919559478759766
+        },
+        {
+          "article_number": 207,
+          "score": 0.474334716796875
+        },
+        {
+          "article_number": 889,
+          "score": 0.4642077386379242
+        }
+      ],
+      "answer": "Article 207 discusses the responsibility of a debtor for loss, but does not address penalties for theft. Therefore, the answer cannot be determined from the provided articles.",
+      "latency_seconds": 42.198,
+      "retrieval_hit": false,
+      "citation_correct": true,
+      "matched_key_facts": [],
+      "answer_correctness_signal": 1.0,
+      "abstained": true,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 22,
+      "question": "What is the prison sentence for murder under Egyptian law?",
+      "answerable": false,
+      "expected_articles": [],
+      "retrieved_articles": [
+        {
+          "article_number": 21,
+          "score": 0.4356314539909363
+        },
+        {
+          "article_number": 25,
+          "score": 0.4340670704841614
+        },
+        {
+          "article_number": 14,
+          "score": 0.4254067540168762
+        },
+        {
+          "article_number": 11,
+          "score": 0.4228735566139221
+        },
+        {
+          "article_number": 874,
+          "score": 0.4218243360519409
+        }
+      ],
+      "answer": "The provided context does not contain any information regarding prison sentences for murder under Egyptian law. Therefore, the answer cannot be determined from the provided articles.",
+      "latency_seconds": 32.801,
+      "retrieval_hit": false,
+      "citation_correct": true,
+      "matched_key_facts": [],
+      "answer_correctness_signal": 1.0,
+      "abstained": true,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 23,
+      "question": "ما هي ضريبة الدخل المستحقة على الموظف؟",
+      "answerable": false,
+      "expected_articles": [],
+      "retrieved_articles": [
+        {
+          "article_number": 684,
+          "score": 0.5345137119293213
+        },
+        {
+          "article_number": 691,
+          "score": 0.5254360437393188
+        },
+        {
+          "article_number": 683,
+          "score": 0.5079892873764038
+        },
+        {
+          "article_number": 1141,
+          "score": 0.5043578743934631
+        },
+        {
+          "article_number": 690,
+          "score": 0.49396976828575134
+        }
+      ],
+      "answer": "cannot be determined from the provided articles.",
+      "latency_seconds": 39.444,
+      "retrieval_hit": false,
+      "citation_correct": true,
+      "matched_key_facts": [],
+      "answer_correctness_signal": 1.0,
+      "abstained": true,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 24,
+      "question": "What is the current price of gold in Egypt?",
+      "answerable": false,
+      "expected_articles": [],
+      "retrieved_articles": [
+        {
+          "article_number": 11,
+          "score": 0.40145987272262573
+        },
+        {
+          "article_number": 789,
+          "score": 0.39840003848075867
+        },
+        {
+          "article_number": 548,
+          "score": 0.3912409543991089
+        },
+        {
+          "article_number": 423,
+          "score": 0.38441941142082214
+        },
+        {
+          "article_number": 774,
+          "score": 0.38316941261291504
+        }
+      ],
+      "answer": "The current price of gold in Egypt cannot be determined from the provided articles.",
+      "latency_seconds": 28.967,
+      "retrieval_hit": false,
+      "citation_correct": true,
+      "matched_key_facts": [],
+      "answer_correctness_signal": 1.0,
+      "abstained": true,
+      "abstention_correct": true,
+      "unsupported_numbers": []
+    },
+    {
+      "id": 25,
+      "question": "ما هو رقم هاتف المحكمة المختصة؟",
+      "answerable": false,
+      "expected_articles": [],
+      "retrieved_articles": [
+        {
+          "article_number": 1089,
+          "score": 0.5731824636459351
+        },
+        {
+          "article_number": 1090,
+          "score": 0.5376108884811401
+        },
+        {
+          "article_number": 1092,
+          "score": 0.5211842060089111
+        },
+        {
+          "article_number": 890,
+          "score": 0.5193954110145569
+        },
+        {
+          "article_number": 943,
+          "score": 0.5131964683532715
+        }
+      ],
+      "answer": "The provided context does not contain any information about phone numbers or the specific court's contact details. \n\nThe relevant article numbers are:\n- Article 1089\n- Article 1090\n- Article 1092\n- Article 890\n- Article 943",
+      "latency_seconds": 45.464,
+      "retrieval_hit": false,
+      "citation_correct": true,
+      "matched_key_facts": [],
+      "answer_correctness_signal": 0.0,
+      "abstained": false,
+      "abstention_correct": false,
+      "unsupported_numbers": []
+    }
+  ]
+}

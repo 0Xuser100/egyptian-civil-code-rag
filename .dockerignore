@@ -1,0 +1,52 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.coverage
+htmlcov
+
+# Virtual environments
+.venv
+venv
+env
+
+# Local ML / experiment artifacts
+mlruns
+mlartifacts
+.mlflow
+*.log
+
+# Local IDE / OS files
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
+
+# Documentation / development files not needed at runtime
+tests
+scripts
+
+# Large source data not needed by the API
+data/raw
+data/interim
+
+# Build artifacts
+dist
+build
+*.egg-info
+
+# Hugging Face / model caches if accidentally present in project
+.cache
+.huggingface
